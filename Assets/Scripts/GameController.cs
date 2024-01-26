@@ -21,6 +21,12 @@ public class GameController : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
+    }
+
+
     // Update is called once per frame
     void FixedUpdate()
     {

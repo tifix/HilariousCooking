@@ -7,8 +7,13 @@ public class UI_Controller : MonoBehaviour
 {
     public Animator Anim;
     public Transform ScreenOrder, ScreenKitchen, ScreenMenu; //Different gamescreens;
+    public static UI_Controller instance;
 
+    public void Awake()
+    {
+        if (instance == null) instance = this;
+    }
 
-    public void PlayAnim(string clip) { Anim.SetTrigger(clip); }
+    public void PlayAnim(string clip) { Debug.Log("Playing animation "+clip); Anim.SetTrigger(clip); }
 
 }
