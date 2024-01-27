@@ -38,6 +38,9 @@ public class DraggableData : MonoBehaviour
         originalParent = transform.parent;
     }
 
+    public void EndDrag() => GameController.instance.EndDrag(gameObject);
+    public void BeginDrag() => GameController.instance.BeginDrag(gameObject);
+
     public enum category
     {
         Tool,

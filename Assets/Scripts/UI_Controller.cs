@@ -35,9 +35,9 @@ public class UI_Controller : MonoBehaviour
         
 
         //Remove the Prefabs already in the scene
-        foreach (var D in ScrollableParent.transform.GetComponentsInChildren<DraggableData>()) 
+        foreach (var LE in ScrollableParent.transform.GetComponentsInChildren<LayoutElement>()) 
         {
-            Destroy(D.transform.parent.gameObject);
+            Destroy(LE.transform.gameObject);
         }
 
         //fill with RELEVANT prefabs
@@ -47,10 +47,11 @@ public class UI_Controller : MonoBehaviour
         
         switch (category)
         {
-            case ("Tools"): { NewOptions = Resources.LoadAll<GameObject>("Tools"); break; }
-            case ("Foods"): { NewOptions = Resources.LoadAll<GameObject>("Foods"); break; }
+            case ("Edible"): { NewOptions = Resources.LoadAll<GameObject>("Edible"); break; }
+            case ("Non-edible"): { NewOptions = Resources.LoadAll<GameObject>("Non-edible"); break; }
+            case ("???"): { NewOptions = Resources.LoadAll<GameObject>("Questionmark"); break; }
 
-            default: { NewOptions = Resources.LoadAll("Foods") as GameObject[]; break; }
+            default: { NewOptions = Resources.LoadAll("Edible") as GameObject[]; break; }
         }
     
         foreach (var item in NewOptions)
