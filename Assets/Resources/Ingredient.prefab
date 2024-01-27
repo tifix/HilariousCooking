@@ -90,8 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca28ed018ceff17499a8170db43d82b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags:
-  - gun
+  Properties: []
+  isAdded: 0
+  originalParent: {fileID: 0}
 --- !u!114 &6527821171461673518
 MonoBehaviour:
   m_ObjectHideFlags: 0
