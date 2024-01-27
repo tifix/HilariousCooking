@@ -71,39 +71,45 @@ public class GameController : MonoBehaviour
         if(curDragged == GO) 
         {
 
+            //Ray r = new Ray(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance)), Vector3.forward);
+            //Debug.DrawRay(r.origin,r.direction,Color.magenta,3);
+            //RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
+
             if (isOverPlate&&GO.TryGetComponent(out Draggable D)) 
             {
+                AddIngredient(D);
                 Debug.Log("Snapping" + GO.name);
-                Vector3 randomOffset = new Vector3(Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance),0);
-
-                curDragged.transform.SetParent(snapPlatePosition);
-                curDragged.transform.localPosition = randomOffset;
-                currentIngredients.AddRange(D.tags);
-                D.isAdded = true;
             }
             else if(GO.TryGetComponent(out Draggable Dr))
             {
+                RemoveIngredient(Dr);
                 Debug.Log("Resetting" + GO.name);
-                curDragged.transform.SetParent(Dr.originalParent);
-                curDragged.transform.localPosition =Vector3.zero;
-
-                if (Dr.isAdded) 
-                {
-                    Dr.isAdded = false;
-                    foreach (string t in Dr.tags)
-                        currentIngredients.Remove(t);
-
-                    
-
-                }
-                
-
             }
-
             curDragged = null;
-
         }
     }
+    public void AddIngredient(Draggable D) 
+    {
+        Vector3 randomOffset = new Vector3(Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), 0);
+
+        D.transform.SetParent(snapPlatePosition);
+        D.transform.position += randomOffset;
+        currentIngredients.AddRange(D.tags);
+        D.isAdded = true;
+    }
+    public void RemoveIngredient(Draggable D)
+    {
+        curDragged.transform.SetParent(D.originalParent);
+        curDragged.transform.localPosition = Vector3.zero;
+
+        if (D.isAdded)
+        {
+            D.isAdded = false;
+            foreach (string t in D.tags)
+                currentIngredients.Remove(t);
+        }
+    }
+
 
     //Update draggable position to current mouse position
     void ProcessDraggable() 
@@ -112,4 +118,17 @@ public class GameController : MonoBehaviour
     }
 
     //When pressing serve, bring the ingredients mix from the kitchen, check if the customer likes it and request next customer
+
+    public void Serve() 
+    {
+    
+    }
+
+    public void Clear() 
+    {
+        foreach (Draggable D in snapPlatePosition.GetComponentsInChildren<Draggable>())
+        {
+            RemoveIngredient(D);
+        }
+    }
 }
