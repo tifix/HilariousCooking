@@ -90,7 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca28ed018ceff17499a8170db43d82b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Properties: []
+  Properties:
+    name: 3
+    tags: 000000000100000003000000
+  Combos:
+  - combosWith: 0
+    createsTags: 0100000003000000
   isAdded: 0
   originalParent: {fileID: 0}
 --- !u!114 &6527821171461673518
