@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   desired: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: a5d41b98f534dd644a1cb3f387d230ab, type: 3}
   dialogue:
   - Oi bruv!
   - whaddya think you're pulling off here?

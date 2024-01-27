@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   desired: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 156c5f2600f951d45835e6cb3cda546b, type: 3}
   dialogue:
   - man, kids these days
   - you ask them for a simple cup of coffe
