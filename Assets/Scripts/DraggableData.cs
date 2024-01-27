@@ -39,7 +39,9 @@ public class DraggableData : MonoBehaviour
 
     public enum category
     {
-        Tool
+        Tool,
+        Food,
+        Spice
     }
 
     public enum ingredientName
@@ -48,6 +50,8 @@ public class DraggableData : MonoBehaviour
         Banana,
         Coconut,
         Chicken,
+        Peanut,
+        Hazelnut,
         Map
     }
 
@@ -58,6 +62,8 @@ public class DraggableData : MonoBehaviour
         Fall,
         Dark,
         Slapstick,
+        Nut,
+        Horny,
         Weird
     }
 

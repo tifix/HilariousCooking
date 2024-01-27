@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEditor.Progress;
+using UnityEditor;
 
 public class UI_Controller : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class UI_Controller : MonoBehaviour
     public Transform ScrollableParent; //Different gamescreens;
     public static UI_Controller instance;
 
-    public int dialogueScreen = 0;
+    public int dialogueScreen = -1;
     public TextMeshProUGUI DialogueDisplayer;
 
     //on shelf reload, these are the objects loaded
@@ -32,28 +34,33 @@ public class UI_Controller : MonoBehaviour
         //Remove the Prefabs already in the scene
         foreach (var D in ScrollableParent.transform.GetComponentsInChildren<DraggableData>()) 
         {
-            Destroy(D.transform.parent);
+            Destroy(D.transform.parent.gameObject);
         }
 
         //fill with RELEVANT prefabs
-        NewOptions = Resources.LoadAll("Ingredient Objects") as GameObject[];
+        //if (category == "Tools") NewOptions = Resources.LoadAll<GameObject>("Tools"); //AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/Tools/");//Resources.LoadAll("Assets/Resources/Tools",typeof(GameObject)) as GameObject[];
+        //if(category== "Foods") NewOptions = Resources.LoadAll<GameObject>("Foods");
+
+        
+        switch (category)
+        {
+            case ("Tools"): { NewOptions = Resources.LoadAll<GameObject>("Tools"); break; }
+            case ("Foods"): { NewOptions = Resources.LoadAll<GameObject>("Foods"); break; }
+
+            default: { NewOptions = Resources.LoadAll("Foods") as GameObject[]; break; }
+        }
+    
         foreach (var item in NewOptions)
         {
-            //if(item.GetComponentInChildren< Draggable>().category !=category) {continue; }
-
-            GameObject Ingredient = Instantiate(Resources.Load("Ingredient") as GameObject, ScrollableParent);
-            if(Ingredient.TryGetComponent(out DraggableData D)) 
-            {
-            //TODO replace blank data with the relevant data here!
-            }
+            Instantiate(item, ScrollableParent);
         }
     }
 
     public void AdvanceDialogue() 
     {
-        dialogueScreen++;
         //Add current customer reference to GameController
-        //DialogueDisplayer.text = GameController.instance.curCustomer;
+        if(dialogueScreen< GameController.instance.curCustomer.dialogue.Count-1) dialogueScreen++;
+        DialogueDisplayer.text = GameController.instance.curCustomer.dialogue[dialogueScreen];
     }
 
 }
