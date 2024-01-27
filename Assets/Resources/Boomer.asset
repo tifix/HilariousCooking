@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2001a8383fe4c524089838d18e332345, type: 3}
-  m_Name: NSFW
+  m_Name: Boomer
   m_EditorClassIdentifier: 
-  Name: Not Safe for Work
-  desired: 00000000
-  image: {fileID: 1873877962, guid: 63aeca16aba09f4439d63cd2e22083c7, type: 3}
+  Name: 
+  desired: 
+  image: {fileID: 0}
   dialogue:
-  - Woah there buddy!
-  - Is this place osha compliant?
-  - 'Sure hope so. '
-  - I live for my work and my work
+  - man, kids these days
+  - you ask them for a simple cup of coffe
+  - ...and they bombard you with a million questions
+  - what the hell is a frappucino?!
+  - alright there sonny. Gimme something nice and simple
+  - like they did it back in the day
