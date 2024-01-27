@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2001a8383fe4c524089838d18e332345, type: 3}
   m_Name: NSFW
   m_EditorClassIdentifier: 
-  Name: 
-  desired: []
-  image: {fileID: 0}
-  dialogue: []
+  Name: Not Safe for Work
+  desired:
+  - name: 
+    tags: 
+  image: {fileID: 1873877962, guid: 63aeca16aba09f4439d63cd2e22083c7, type: 3}
+  dialogue:
+  - woah there bucko!
+  - is this place osha compliant?
