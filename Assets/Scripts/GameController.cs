@@ -183,18 +183,22 @@ public class GameController : MonoBehaviour
     public void Serve() 
     {
         curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
-        Debug.Log("SEEEEERVE");
 
         audioManager.playServe();
+        Clear();
     }
 
-    public void Clear() 
+    public void Trash() 
+    {
+        Clear();
+        audioManager.playTrash();
+    }
+
+    void Clear()
     {
         foreach (DraggableData D in snapPlatePosition.GetComponentsInChildren<DraggableData>())
         {
             RemoveIngredient(D);
         }
-
-        audioManager.playTrash();
     }
 }

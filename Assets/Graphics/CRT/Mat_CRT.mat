@@ -53,15 +53,17 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _Ammount_1: 13
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
+    - _Density: 0.426
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScanningLines: 23
     - _ScanningLinesSpeed: 0.5
-    - _SpeedMax: 0.7
+    - _SpeedMax: 0.6
     - _SpeedMin: 0.2
     - _SrcBlend: 5
     - _Surface: 1
