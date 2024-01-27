@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using static DraggableData;
 
 
+[RequireComponent(typeof(S_AudioManager))]
+
 public class GameController : MonoBehaviour
 {
     [Range(0,2)] public float CHEAT_timescale = 1;
@@ -19,16 +21,15 @@ public class GameController : MonoBehaviour
     public List<string> currentIngredients = new List<string>();
     public List<string> allCurrentKeywords = new List<string>();
 
+    S_AudioManager audioManager;
+
     public void Awake()
     {
         if (instance == null) instance = this;
-        
+        audioManager = GetComponent<S_AudioManager>();
     }
     public void QuitGame() => Application.Quit();
     
-
-
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
@@ -51,6 +52,8 @@ public class GameController : MonoBehaviour
         //Debug.Log("Dragging "+GO.name);
         curDragged = GO;
         curDragged.transform.SetParent(UI_Controller.instance.canvas);
+
+        audioManager.playPickup();
     }
 
     //when holding and moving an ingredient, when letting go, if over the plate - add it to current ingredients, otherwise return it to its source position
@@ -70,6 +73,8 @@ public class GameController : MonoBehaviour
             }
             curDragged = null;
         }
+
+        audioManager.playPutDown();
     }
     public void AddIngredient(DraggableData D) 
     {
@@ -77,6 +82,9 @@ public class GameController : MonoBehaviour
         //Placing visually
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
+
+        if(D.Sound)
+            audioManager.playPlaceIngredient(D.Sound);
 
         //Handling data
 
@@ -175,6 +183,9 @@ public class GameController : MonoBehaviour
     public void Serve() 
     {
         curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
+        Debug.Log("SEEEEERVE");
+
+        audioManager.playServe();
     }
 
     public void Clear() 
@@ -183,5 +194,7 @@ public class GameController : MonoBehaviour
         {
             RemoveIngredient(D);
         }
+
+        audioManager.playTrash();
     }
 }

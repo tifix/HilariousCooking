@@ -25,7 +25,8 @@ public class DraggableData : MonoBehaviour
     }
 
     public properties Properties;
-    [SerializeField] public List<combos> Combos;
+    public List<combos> Combos;
+    public AudioClip Sound;
     public bool isAdded = false;
 
     public Transform originalParent;
@@ -36,6 +37,9 @@ public class DraggableData : MonoBehaviour
     {
         originalParent = transform.parent;
     }
+
+    public void EndDrag() => GameController.instance.EndDrag(gameObject);
+    public void BeginDrag() => GameController.instance.BeginDrag(gameObject);
 
     public enum category
     {
