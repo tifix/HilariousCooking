@@ -29,14 +29,17 @@ public class SO_Customer : ScriptableObject
     private void Awake()
     {
 
-        for (int i = 0; i < opinions.Count; i++)
+        foreach (responsess r in opinions)
         {
-            desiredInString.Add(opinions[i].desired.ToString());
+            Debug.Log("desires  " + r.desired.ToString());
+            //desiredInString.Add(r.desired.ToString());
         }
     }
 
     public void Evaluate(List<string> ingredients, List<string> keywords) 
     {
+        Debug.Log("LENGTH OF KW = " +desiredInString.Count);
+
         int score = 0;
 
         List<string> found = new List<string>();
@@ -60,7 +63,7 @@ public class SO_Customer : ScriptableObject
                 
         }
 
-        if(response == null)
+        if(response.Count < 1)
         {
             if(score == 0)
                 response = opinions[0].dialogue;

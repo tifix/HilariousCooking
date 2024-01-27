@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
     }
     public void AddIngredient(DraggableData D) 
     {
-        Debug.Log(allCurrentKeywords.Count);
+        
         //Placing visually
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
@@ -102,6 +102,7 @@ public class GameController : MonoBehaviour
 
         D.isAdded = true;
         AddCompleteCombos(D);
+        Debug.Log(allCurrentKeywords.Count);
 
         showUpdatedLists();
     }
@@ -185,7 +186,7 @@ public class GameController : MonoBehaviour
         curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
 
         audioManager.playServe();
-        Clear();
+        //Clear();
     }
 
     public void Trash() 
