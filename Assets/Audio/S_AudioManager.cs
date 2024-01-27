@@ -47,77 +47,112 @@ public class S_AudioManager : MonoBehaviour
 
     public void PlayBoomerSound()
     {
-        int rand = Random.Range(0, BoomerTalk.Length);
-        characterSource.clip = BoomerTalk[rand];
-        characterSource.Play();
+        if (BoomerTalk.Length > 0)
+        {
+            int rand = Random.Range(0, BoomerTalk.Length);
+            characterSource.clip = BoomerTalk[rand];
+            characterSource.Play();
+        }
     }
 
     public void PlayNSFWSound()
     {
-        int rand = Random.Range(0, NSFWTalk.Length);
-        characterSource.clip =  NSFWTalk[rand];
-        characterSource.Play();
+        if (NSFWTalk.Length > 0)
+        {
+            int rand = Random.Range(0, NSFWTalk.Length);
+            characterSource.clip = NSFWTalk[rand];
+            characterSource.Play();
+        }
     }
 
     public void PlayMenuClick()
     {
+        if (click != null) { 
         menuSource.clip = click;
         menuSource.Play();
+        }
     }
 
     public void PlayMainStart()
     {
-        menuSource.clip = startSound;
-        menuSource.Play();
+        if (click != startSound)
+        {
+            menuSource.clip = startSound;
+            menuSource.Play();
+        }
     }
 
     public void PlayMainExit()
     {
-        menuSource.clip = quitSound;
-        menuSource.Play();
+        if (quitSound != null)
+        {
+            menuSource.clip = quitSound;
+            menuSource.Play();
+        }
     }
 
     public void StartMenuMusic()
     {
-        MusicSource.clip = menuMusic;
-        MusicSource.Play();
+        if (menuMusic != null)
+        {
+            MusicSource.clip = menuMusic;
+            MusicSource.Play();
+        }
     }
 
     public void StartCookingMusic()
     {
-        MusicSource.clip = cookingMusic;
-        MusicSource.Play();
+        if (cookingMusic != null)
+        {
+            MusicSource.clip = cookingMusic;
+            MusicSource.Play();
+        }
     }
 
     public void playPlaceIngredient(AudioClip ingSound)
     {
-        Source4.clip = ingSound;
-        Source4.Play();
+        if (ingSound != null)
+        {
+            Source4.clip = ingSound;
+            Source4.Play();
+        }
     }
 
     public void playPickup()
     {
-        menuSource.clip = pickUp;
-        menuSource.Play();
+        if (pickUp != null)
+        {
+            menuSource.clip = pickUp;
+            menuSource.Play();
+        }
     }
 
 
     public void playPutDown()
     {
-        menuSource.clip = putDown;
-        menuSource.Play();
+        if (putDown != null)
+        {
+            menuSource.clip = putDown;
+            menuSource.Play();
+        }
     }
 
     public void playServe()
     {
-        Source4.clip = serve;
-        Source4.Play();
+        if (serve != null)
+        {
+            Source4.clip = serve;
+            Source4.Play();
+        }
     }
 
     public void playTrash()
     {
-        Source4.clip = trash;
-        Source4.Play();
+        if (trash != null)
+        {
+            Source4.clip = trash;
+            Source4.Play();
+        }
     }
 
     public void playDishSlide()

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boomer
   m_EditorClassIdentifier: 
   Name: 
-  desired: 
-  image: {fileID: 21300000, guid: 156c5f2600f951d45835e6cb3cda546b, type: 3}
+  desired: 01000000020000000a0000000b000000
+  image: {fileID: 0}
   dialogue:
   - man, kids these days
   - you ask them for a simple cup of coffe
