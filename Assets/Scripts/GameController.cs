@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     public void Awake()
     {
         if (instance == null) instance = this;
+        
     }
     public void QuitGame() => Application.Quit();
     
@@ -53,7 +54,7 @@ public class GameController : MonoBehaviour
     //When in the kitchen screen, click and hold an ingredient to drag it
     public void BeginDrag(GameObject GO)  
     {
-        Debug.Log("Dragging "+GO.name);
+        //Debug.Log("Dragging "+GO.name);
         curDragged = GO;
         curDragged.transform.SetParent(UI_Controller.instance.canvas);
     }
@@ -66,25 +67,26 @@ public class GameController : MonoBehaviour
             if (isOverPlate&&GO.TryGetComponent(out DraggableData D)) 
             {
                 AddIngredient(D);
-                Debug.Log("Snapping" + GO.name);
+                //Debug.Log("Snapping" + GO.name);
             }
             else if(GO.TryGetComponent(out DraggableData Dr))
             {
                 RemoveIngredient(Dr);
-                Debug.Log("Resetting" + GO.name);
+                //Debug.Log("Resetting" + GO.name);
             }
             curDragged = null;
         }
     }
     public void AddIngredient(DraggableData D) 
     {
+        Debug.Log(allCurrentKeywords.Count);
         //Placing visually
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
         //Handling data
         //Adds name of ingredient to total list, and saves what place in the list it is.
-        currentIngredients.Add(D.Properties.name);
+        currentIngredients.Add(D.Properties.name.ToString());
 
         //Adds each keyword of this ingredient to the list of all keywords.
         foreach (keywords k in D.Properties.tags)
@@ -113,7 +115,7 @@ public class GameController : MonoBehaviour
             //    currentIngredients.Remove(D.Properties[i]);
             //    RefreshCompleteCombos();
             //}
-            currentIngredients.Remove(D.Properties.name);
+            currentIngredients.Remove(D.Properties.name.ToString());
             foreach (keywords keywords in D.Properties.tags)
             {
                 allCurrentKeywords.Remove(keywords.ToString());
@@ -128,7 +130,7 @@ public class GameController : MonoBehaviour
     //Takes in the added ingredient, goes through what it can combine with and compares them to whats currently on the pizza, then if it finds it, adds the keywords in that combination.
     void AddCompleteCombos(DraggableData D) 
     {
-        foreach(combos c in D.Properties.Combos)
+        foreach(combos c in D.Combos)
         {
             string cS = c.combosWith.ToString();
             if(currentIngredients.IndexOf(cS) > -1)
@@ -144,7 +146,7 @@ public class GameController : MonoBehaviour
     //Takes in the ingredient being removes, sees if it is currently combined with anything, and removes those keywords from the total. 
     void RemoveCombos(DraggableData D)
     {
-        foreach (combos c in D.Properties.Combos)
+        foreach (combos c in D.Combos)
         {
             string cS = c.combosWith.ToString();
             if (currentIngredients.IndexOf(cS) > -1)
@@ -157,11 +159,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //Used for debugging data when needed.
+
     void showUpdatedLists()
     {
-        Debug.Log("Ingredients = "+currentIngredients+ "At Length = " +currentIngredients.Count);
-        Debug.Log("Keywords = " + allCurrentKeywords + "At Length = " + allCurrentKeywords.Count);
+        //Debug.Log("Ingredients = "+currentIngredients+ "At Length = " +currentIngredients.Count);
+        //Debug.Log("Keywords = " + allCurrentKeywords + "At Length = " + allCurrentKeywords.Count);
     }
 
 

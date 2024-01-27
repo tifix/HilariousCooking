@@ -7,8 +7,7 @@ public class DraggableData : MonoBehaviour
     [System.Serializable]
     public struct properties
     {
-        public string name;
-        public List<combos> Combos;
+        public ingredientName name;
         public List<keywords> tags;
 
 
@@ -18,13 +17,15 @@ public class DraggableData : MonoBehaviour
         //public void SetComboActive(bool state) {isComboActive= state;}
     }
 
+    [System.Serializable]
     public struct combos
     {
-        public  ingredientName combosWith;
+        public ingredientName combosWith;
         public List<keywords> createsTags;
     }
 
     public properties Properties;
+    [SerializeField] public List<combos> Combos;
     public bool isAdded = false;
 
     public Transform originalParent;
@@ -43,12 +44,21 @@ public class DraggableData : MonoBehaviour
 
     public enum ingredientName
     {
-        Gun
+        Gun,
+        Banana,
+        Coconut,
+        Chicken,
+        Map
     }
 
     public enum keywords
     {
-        None
+        None,
+        Death,
+        Fall,
+        Dark,
+        Slapstick,
+        Weird
     }
 
 }
