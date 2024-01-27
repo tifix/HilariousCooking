@@ -25,7 +25,8 @@ public class DraggableData : MonoBehaviour
     }
 
     public properties Properties;
-    [SerializeField] public List<combos> Combos;
+    public List<combos> Combos;
+    public AudioClip Sound;
     public bool isAdded = false;
 
     public Transform originalParent;
