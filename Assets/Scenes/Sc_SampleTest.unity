@@ -237,11 +237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CHEAT_timescale: 1
   curDragged: {fileID: 0}
-  camDragDistance: 100
   snapPlatePosition: {fileID: 2663915839443415127}
-  snapPlateRandomDistance: 30
+  camDragDistance: 100
   isOverPlate: 0
   currentIngredients: []
+  allCurrentKeywords: []
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,9 +1874,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4043016045592007578}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!222 &1005590035576375292
 CanvasRenderer:

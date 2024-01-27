@@ -30,7 +30,7 @@ public class UI_Controller : MonoBehaviour
         PlayAnim("Drawer");
 
         //Remove the Prefabs already in the scene
-        foreach (var D in ScrollableParent.transform.GetComponentsInChildren<Draggable>()) 
+        foreach (var D in ScrollableParent.transform.GetComponentsInChildren<DraggableData>()) 
         {
             Destroy(D.transform.parent);
         }
@@ -42,7 +42,7 @@ public class UI_Controller : MonoBehaviour
             //if(item.GetComponentInChildren< Draggable>().category !=category) {continue; }
 
             GameObject Ingredient = Instantiate(Resources.Load("Ingredient") as GameObject, ScrollableParent);
-            if(Ingredient.TryGetComponent(out Draggable D)) 
+            if(Ingredient.TryGetComponent(out DraggableData D)) 
             {
             //TODO replace blank data with the relevant data here!
             }

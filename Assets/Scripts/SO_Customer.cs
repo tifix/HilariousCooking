@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Draggable;
+using static DraggableData;
 
 [CreateAssetMenu(fileName = "Customer", menuName = "ScriptableObjects/Customer")]
 public class SO_Customer : ScriptableObject
