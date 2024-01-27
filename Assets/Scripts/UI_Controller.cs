@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_Controller : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class UI_Controller : MonoBehaviour
     public Transform ScrollableParent; //Different gamescreens;
     public static UI_Controller instance;
 
+    public int dialogueScreen = 0;
+    public TextMeshProUGUI DialogueDisplayer;
+
+    //on shelf reload, these are the objects loaded
     [SerializeField] GameObject[] NewOptions = new GameObject[0];
     //public 
 
@@ -42,6 +47,13 @@ public class UI_Controller : MonoBehaviour
             //TODO replace blank data with the relevant data here!
             }
         }
+    }
+
+    public void AdvanceDialogue() 
+    {
+        dialogueScreen++;
+        //Add current customer reference to GameController
+        //DialogueDisplayer.text = GameController.instance.curCustomer;
     }
 
 }
