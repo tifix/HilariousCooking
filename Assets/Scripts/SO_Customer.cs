@@ -11,4 +11,9 @@ public class SO_Customer : ScriptableObject
     public List<properties> desired;
     public Sprite image;
     public List<string> dialogue= new List<string>();
+
+    public void Evaluate(List<string> ingredients, List<string> keywords) 
+    {
+    
+    }
 }

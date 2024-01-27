@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Not Safe for Work
   desired:
-  - name: 
+  - name: 0
     tags: 
   image: {fileID: 1873877962, guid: 63aeca16aba09f4439d63cd2e22083c7, type: 3}
   dialogue:
   - woah there bucko!
   - is this place osha compliant?
+  - sure hope so. Safety's my jam

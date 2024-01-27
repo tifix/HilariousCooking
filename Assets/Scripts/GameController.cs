@@ -4,13 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using static DraggableData;
 
-public class customer
-{
-    public string name;
-    public Sprite customerArt;
-    public List<properties> desired;
-}
-
 
 public class GameController : MonoBehaviour
 {
@@ -21,6 +14,7 @@ public class GameController : MonoBehaviour
     public float camDragDistance = 100;
     public bool isOverPlate;
 
+    public SO_Customer curCustomer;
     public static GameController instance;
     public List<string> currentIngredients = new List<string>();
     public List<string> allCurrentKeywords = new List<string>();
@@ -85,6 +79,10 @@ public class GameController : MonoBehaviour
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
         //Handling data
+
+        if (currentIngredients.IndexOf(D.Properties.name.ToString()) > -1)
+            return;
+
         //Adds name of ingredient to total list, and saves what place in the list it is.
         currentIngredients.Add(D.Properties.name.ToString());
 
@@ -174,10 +172,9 @@ public class GameController : MonoBehaviour
     }
 
     //When pressing serve, bring the ingredients mix from the kitchen, check if the customer likes it and request next customer
-
     public void Serve() 
     {
-    
+        curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
     }
 
     public void Clear() 
