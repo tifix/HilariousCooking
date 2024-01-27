@@ -57,14 +57,14 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Density: 0.426
+    - _Density: 0.262
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScanningLines: 23
     - _ScanningLinesSpeed: 0.5
-    - _SpeedMax: 0.6
-    - _SpeedMin: 0.2
+    - _SpeedMax: 0.43
+    - _SpeedMin: 0.13
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
