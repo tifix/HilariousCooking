@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Boomer
   m_EditorClassIdentifier: 
   Name: 
-  desired: []
+  desired: 
   image: {fileID: 0}
-  dialogue: []
+  dialogue:
+  - man, kids these days
+  - you ask them for a simple cup of coffe
+  - ...and they bombard you with a million questions
+  - what the hell is a frappucino?!
+  - alright there sonny. Gimme something nice and simple
+  - like they did it back in the day

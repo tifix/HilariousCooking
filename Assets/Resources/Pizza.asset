@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   Name: 
-  desired: []
+  desired: 
   image: {fileID: 0}
-  dialogue: []
+  dialogue:
+  - Oi bruv!
+  - whaddya think you're pulling off here?
+  - What's this overpriced posh $%"!&# ?!
+  - You wanna go, bro?
+  - You want a piece of me?
+  - You want a piece of this?!
+  - If ya think you can hide behind all this...
+  - snazzy facade
+  - my dad's gonna mess you up
+  - he's a senator, he can mes syou up bigtime
+  - so gimme something good and be quick about it
