@@ -15,9 +15,11 @@ public class GameController : MonoBehaviour
 {
     [Range(0,2)] public float CHEAT_timescale = 1;
     public GameObject curDragged = null;
-    public Vector3 curDraggedOrigin = Vector3.zero;
+    //public Vector3 curDraggedOrigin = Vector3.zero;
     public float camDragDistance = 100;
     public Transform snapPlatePosition;
+    //public Transform IngredientTransformParent;
+    public float snapPlateRandomDistance = 10;
     public bool isOverPlate;
 
     public static GameController instance;
@@ -26,6 +28,10 @@ public class GameController : MonoBehaviour
     public void Awake()
     {
         if (instance == null) instance = this;
+    }
+    public void QuitGame() 
+    {
+        Application.Quit();
     }
 
 
@@ -48,13 +54,14 @@ public class GameController : MonoBehaviour
         if (CHEAT_timescale != 1) Time.timeScale = CHEAT_timescale;
     }
 
+    public void SetIsOverPlate(bool state)=>isOverPlate = state;
 
 
     //When in the kitchen screen, click and hold an ingredient to drag it
     public void BeginDrag(GameObject GO)  
     {
+        Debug.Log("Dragging "+GO.name);
         curDragged = GO;
-        curDraggedOrigin = GO.transform.position;
         curDragged.transform.SetParent(UI_Controller.instance.canvas);
     }
 
@@ -63,14 +70,34 @@ public class GameController : MonoBehaviour
     {
         if(curDragged == GO) 
         {
+
             if (isOverPlate&&GO.TryGetComponent(out Draggable D)) 
             {
-                curDragged.transform.position = snapPlatePosition.position;
+                Debug.Log("Snapping" + GO.name);
+                Vector3 randomOffset = new Vector3(Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance),0);
+
+                curDragged.transform.SetParent(snapPlatePosition);
+                curDragged.transform.localPosition = randomOffset;
                 currentIngredients.AddRange(D.tags);
+                D.isAdded = true;
             }
-            else 
+            else if(GO.TryGetComponent(out Draggable Dr))
             {
-                curDragged.transform.position = curDraggedOrigin;
+                Debug.Log("Resetting" + GO.name);
+                curDragged.transform.SetParent(Dr.originalParent);
+                curDragged.transform.localPosition =Vector3.zero;
+
+                if (Dr.isAdded) 
+                {
+                    Dr.isAdded = false;
+                    foreach (string t in Dr.tags)
+                        currentIngredients.Remove(t);
+
+                    
+
+                }
+                
+
             }
 
             curDragged = null;

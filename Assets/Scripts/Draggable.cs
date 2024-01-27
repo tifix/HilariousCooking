@@ -5,10 +5,12 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     public List<string> tags = new List<string>();
+    public bool isAdded = false;
+    public Transform originalParent;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        originalParent = transform.parent;
     }
 }
