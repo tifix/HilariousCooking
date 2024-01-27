@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Draggable;
 
 public class customer
 {
     public string name;
     public Sprite customerArt;
-    public List<string> desired;
+    public List<properties> desired;
 }
 
 
@@ -15,31 +16,22 @@ public class GameController : MonoBehaviour
 {
     [Range(0,2)] public float CHEAT_timescale = 1;
     public GameObject curDragged = null;
-    //public Vector3 curDraggedOrigin = Vector3.zero;
-    public float camDragDistance = 100;
+
     public Transform snapPlatePosition;
-    //public Transform IngredientTransformParent;
-    public float snapPlateRandomDistance = 10;
+    public float camDragDistance = 100;
     public bool isOverPlate;
 
     public static GameController instance;
-    public List<string> currentIngredients = new List<string>();
+    public List<properties> currentIngredients = new List<properties>();
 
     public void Awake()
     {
         if (instance == null) instance = this;
     }
-    public void QuitGame() 
-    {
-        Application.Quit();
-    }
+    public void QuitGame() => Application.Quit();
+    
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void Update()
     {
@@ -70,11 +62,6 @@ public class GameController : MonoBehaviour
     {
         if(curDragged == GO) 
         {
-
-            //Ray r = new Ray(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance)), Vector3.forward);
-            //Debug.DrawRay(r.origin,r.direction,Color.magenta,3);
-            //RaycastHit2D hit = Physics2D.Raycast(r.origin, r.direction);
-
             if (isOverPlate&&GO.TryGetComponent(out Draggable D)) 
             {
                 AddIngredient(D);
@@ -90,23 +77,38 @@ public class GameController : MonoBehaviour
     }
     public void AddIngredient(Draggable D) 
     {
-        Vector3 randomOffset = new Vector3(Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), Random.Range(snapPlateRandomDistance, -snapPlateRandomDistance), 0);
-
         D.transform.SetParent(snapPlatePosition);
-        D.transform.position += randomOffset;
-        currentIngredients.AddRange(D.tags);
+        D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
+
+        currentIngredients.AddRange(D.Properties);
         D.isAdded = true;
+        RefreshCompleteCombos();
     }
     public void RemoveIngredient(Draggable D)
     {
-        curDragged.transform.SetParent(D.originalParent);
-        curDragged.transform.localPosition = Vector3.zero;
+        D.transform.SetParent(D.originalParent);
+        D.transform.localPosition = Vector3.zero;
 
         if (D.isAdded)
         {
             D.isAdded = false;
-            foreach (string t in D.tags)
-                currentIngredients.Remove(t);
+            for (int i = 0; i < D.Properties.Count; i++)
+            {
+                currentIngredients.Remove(D.Properties[i]);
+                RefreshCompleteCombos();
+            }
+        }
+    }
+
+    void RefreshCompleteCombos() 
+    {
+        for (int i = 0; i < currentIngredients.Count; i++)
+        {
+            for (int j = 0; j < currentIngredients.Count; j++)
+            {
+                if (currentIngredients[i].combosWith == currentIngredients[j].name) currentIngredients[i].SetComboActive(true);
+                else currentIngredients[i].SetComboActive(false);
+            }
         }
     }
 
