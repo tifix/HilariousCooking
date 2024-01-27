@@ -16,7 +16,8 @@ public class GameController : MonoBehaviour
     public float camDragDistance = 100;
     public bool isOverPlate;
 
-    public SO_Customer curCustomer;
+    public SO_Customer[] Customers;
+    public int curCustomer = 0;
     public static GameController instance;
     public List<string> currentIngredients = new List<string>();
     public List<string> allCurrentKeywords = new List<string>();
@@ -180,10 +181,15 @@ public class GameController : MonoBehaviour
         if (curDragged != null) { curDragged.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance)); }
     }
 
+
+
+
+
+
     //When pressing serve, bring the ingredients mix from the kitchen, check if the customer likes it and request next customer
     public void Serve() 
     {
-        curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
+        Customers[curCustomer].Evaluate(currentIngredients, allCurrentKeywords);
 
         audioManager.playServe();
         //Clear();
@@ -201,5 +207,10 @@ public class GameController : MonoBehaviour
         {
             RemoveIngredient(D);
         }
+    }
+
+    public void Win() 
+    {
+        Debug.LogWarning("Congratulations! You win!");
     }
 }

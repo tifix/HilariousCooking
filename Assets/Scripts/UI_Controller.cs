@@ -15,7 +15,9 @@ public class UI_Controller : MonoBehaviour
 
     public int dialogueScreen = -1;
     public TextMeshProUGUI DialogueDisplayer;
-
+    public Image ClientSpriteDspplayer;
+    public Image ClientTextBox;
+    public Sprite TextboxNonInverted;
     public S_AudioManager audioManager;
 
     //on shelf reload, these are the objects loaded
@@ -36,14 +38,8 @@ public class UI_Controller : MonoBehaviour
 
         //Remove the Prefabs already in the scene
         foreach (var LE in ScrollableParent.transform.GetComponentsInChildren<LayoutElement>()) 
-        {
             Destroy(LE.transform.gameObject);
-        }
-
-        //fill with RELEVANT prefabs
-        //if (category == "Tools") NewOptions = Resources.LoadAll<GameObject>("Tools"); //AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/Tools/");//Resources.LoadAll("Assets/Resources/Tools",typeof(GameObject)) as GameObject[];
-        //if(category== "Foods") NewOptions = Resources.LoadAll<GameObject>("Foods");
-
+        
         
         switch (category)
         {
@@ -63,8 +59,18 @@ public class UI_Controller : MonoBehaviour
     public void AdvanceDialogue() 
     {
         //Add current customer reference to GameController
-        if(dialogueScreen< GameController.instance.curCustomer.dialogue.Count-1) dialogueScreen++;
-        DialogueDisplayer.text = GameController.instance.curCustomer.dialogue[dialogueScreen];
+        if(dialogueScreen< GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count-1) dialogueScreen++;
+        DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[dialogueScreen];
     }
+    public void LoadCustomerData()
+    {
+        GameController.instance.curCustomer++;
+        if(GameController.instance.curCustomer>= GameController.instance.Customers.Length) { GameController.instance.Win(); return; }   //when out of bounds, all customers done, win!
 
+        ClientTextBox.sprite = TextboxNonInverted;
+
+        dialogueScreen = -1; //Reset the dialogue to the initial first screen;
+        DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[0];
+        ClientSpriteDspplayer.sprite = GameController.instance.Customers[GameController.instance.curCustomer].image;
+    }
 }
