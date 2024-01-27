@@ -137,7 +137,7 @@
                 "m_Node": {
                     "m_Id": "718e52ea6999442b933409e447aa7c98"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
@@ -235,7 +235,21 @@
                 "m_Node": {
                     "m_Id": "718e52ea6999442b933409e447aa7c98"
                 },
+                "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "5bb57fa46e634b0db7ea9838bcdc1041"
+                },
                 "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "3da7e4d4bb194dc0bcf158709a2ff0d1"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -346,20 +360,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "4f91175903ed466d94a29a5e5766f4ac"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "afad6a213b0c40bc9fff3647484a65f2"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "3da7e4d4bb194dc0bcf158709a2ff0d1"
                 },
                 "m_SlotId": 0
             }
@@ -642,9 +642,9 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5,
         "w": 0.0
     },
     "m_DefaultValue": {
@@ -2633,7 +2633,7 @@
     "m_ShaderOutputName": "T",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.03999999910593033,
+        "x": 0.004999999888241291,
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
@@ -2768,7 +2768,7 @@
     "m_ShaderOutputName": "T",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.05999999865889549,
+        "x": 0.00800000037997961,
         "y": 0.5,
         "z": 0.5,
         "w": 0.0
@@ -3173,7 +3173,7 @@
         "w": 0.0
     },
     "m_Labels": [],
-    "m_ScreenSpaceType": 4
+    "m_ScreenSpaceType": 1
 }
 
 {
