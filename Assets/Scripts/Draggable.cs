@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<string> tags = new List<string>();
 
     // Update is called once per frame
     void Update()
