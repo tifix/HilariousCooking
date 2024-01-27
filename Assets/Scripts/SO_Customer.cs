@@ -28,7 +28,7 @@ public class SO_Customer : ScriptableObject
 
         foreach (string k in keywords)
         {
-            if (desiredInString.Contains(k)) { score++; }       
+            if (desiredInString.Contains(k)) { score++; }     
         }
 
         Debug.Log("Score = " +score);

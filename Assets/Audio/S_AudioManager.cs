@@ -119,4 +119,9 @@ public class S_AudioManager : MonoBehaviour
         Source4.clip = trash;
         Source4.Play();
     }
+
+    public void playDishSlide()
+    {
+
+    }
 }
