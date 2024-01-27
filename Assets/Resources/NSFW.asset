@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NSFW
   m_EditorClassIdentifier: 
   Name: Not Safe for Work
-  desired: 00000000
+  desired: 0400000003000000020000000700000008000000
   image: {fileID: 1873877962, guid: 63aeca16aba09f4439d63cd2e22083c7, type: 3}
   dialogue:
   - Woah there buddy!

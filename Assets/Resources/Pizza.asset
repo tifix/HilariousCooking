@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   Name: 
-  desired: 
+  desired: 00000000010000000a00000004000000050000000b000000
   image: {fileID: 0}
   dialogue:
   - Oi bruv!

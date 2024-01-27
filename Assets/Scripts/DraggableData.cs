@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DraggableData : MonoBehaviour
 {
@@ -31,11 +32,18 @@ public class DraggableData : MonoBehaviour
 
     public Transform originalParent;
 
+    public TextMeshProUGUI text;
 
     // Update is called once per frame
     void Start()
     {
         originalParent = transform.parent;
+       
+    }
+
+    private void Awake()
+    {
+        text.text = Properties.name.ToString();
     }
 
     public void EndDrag() => GameController.instance.EndDrag(gameObject);
@@ -56,19 +64,47 @@ public class DraggableData : MonoBehaviour
         Chicken,
         Peanut,
         Hazelnut,
-        Map
+        Existential,
+        Computer,
+        Coffee,
+        Coke,
+        Briefcase,
+        Donut,
+        Grinder,
+        Knife,
+        Lemon,
+        Love,
+        Muscle,
+        Pizza,
+        YOU,
+        Cocaine,
+        Scissors,
+        Running,
+        Baby,
+        Dad,
+        Explosion,
+    
     }
 
     public enum keywords
     {
-        None,
-        Death,
-        Fall,
-        Dark,
-        Slapstick,
+        Cool,
+        Relatable,
+        Sex,
+        NSFW,
+        Dangerous,
+        Pizza,
         Nut,
-        Horny,
-        Weird
+        Slapstick,
+        Dark,
+        Meme,
+        Commentary,
+        Mean,
+        Friendly,
+        Relaxing,
+        Business,
+        Threatening,
+        None
     }
 
 }
