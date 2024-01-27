@@ -16,6 +16,8 @@ public class UI_Controller : MonoBehaviour
     public int dialogueScreen = -1;
     public TextMeshProUGUI DialogueDisplayer;
 
+    public S_AudioManager audioManager;
+
     //on shelf reload, these are the objects loaded
     [SerializeField] GameObject[] NewOptions = new GameObject[0];
     //public 
@@ -30,6 +32,7 @@ public class UI_Controller : MonoBehaviour
     public void OnDrawerOpen(string category) 
     {
         PlayAnim("Drawer");
+        
 
         //Remove the Prefabs already in the scene
         foreach (var D in ScrollableParent.transform.GetComponentsInChildren<DraggableData>()) 

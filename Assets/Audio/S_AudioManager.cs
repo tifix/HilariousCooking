@@ -41,6 +41,7 @@ public class S_AudioManager : MonoBehaviour
     private void Start()
     {
         menuSource = GetComponent<AudioSource>();
+        StartMenuMusic();
     }
 
 

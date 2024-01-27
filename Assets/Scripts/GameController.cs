@@ -26,13 +26,10 @@ public class GameController : MonoBehaviour
     public void Awake()
     {
         if (instance == null) instance = this;
-        
+        audioManager = GetComponent<S_AudioManager>();
     }
     public void QuitGame() => Application.Quit();
     
-
-
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
@@ -86,7 +83,8 @@ public class GameController : MonoBehaviour
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
-        audioManager.playPlaceIngredient(D.Sound);
+        if(D.Sound)
+            audioManager.playPlaceIngredient(D.Sound);
 
         //Handling data
 
@@ -185,6 +183,7 @@ public class GameController : MonoBehaviour
     public void Serve() 
     {
         curCustomer.Evaluate(currentIngredients, allCurrentKeywords);
+        Debug.Log("SEEEEERVE");
 
         audioManager.playServe();
     }
