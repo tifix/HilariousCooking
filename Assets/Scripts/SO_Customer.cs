@@ -84,7 +84,7 @@ public class SO_Customer : ScriptableObject
 
         UI_Controller.instance.PlayAnim("NewCustomer");
         //if funky combo detected, make that the text
-        //UI_Controller.instance.DialogueDisplayer.text = Outcomes[desired[k]];
+        UI_Controller.instance.DialogueDisplayer.text = response[0];
 
         Debug.Log(response[0]);
 

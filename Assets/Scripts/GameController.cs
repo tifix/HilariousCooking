@@ -81,6 +81,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log(allCurrentKeywords.Count);
         //Placing visually
+        if (currentIngredients.Count > 2) RemoveIngredient(D);
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 

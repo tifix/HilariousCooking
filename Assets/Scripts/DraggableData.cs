@@ -46,8 +46,18 @@ public class DraggableData : MonoBehaviour
         text.text = Properties.name.ToString();
     }
 
-    public void EndDrag() => GameController.instance.EndDrag(gameObject);
-    public void BeginDrag() => GameController.instance.BeginDrag(gameObject);
+    public void EndDrag() 
+    {
+        GetComponentInParent<Animator>().SetTrigger("endDrag");
+        GameController.instance.EndDrag(gameObject);
+    }
+
+
+    public void BeginDrag()
+    {
+        GetComponentInParent<Animator>().SetTrigger("beginDrag");
+        GameController.instance.BeginDrag(gameObject);
+    } 
 
     public enum category
     {
