@@ -28,36 +28,36 @@ MonoBehaviour:
   opinions:
   - desired: 17
     dialogue:
-    - None - Fuck you
+    - Seriously? Used a vanishing spell or something?
     anim: 1
     scoreGain: 0
   - desired: 6
     dialogue:
-    - Nice Nut
+    - Nice Nuts. Tons of protein in these. Cheers!
     anim: 0
     scoreGain: 1
   - desired: 14
     dialogue:
-    - Professional, I like that
+    - Let's get down to business. To obtain. These gains!
     anim: 0
     scoreGain: 1
   - desired: 2
     dialogue:
-    - As a slut, sex = good
+    - '*snicker* well aren''t you charming?'
     anim: 0
     scoreGain: 1.3
   - desired: 12
     dialogue:
-    - Oh you are sweet
+    - Oh, that's sweet.
     anim: 0
     scoreGain: 1.4
   - desired: 15
     dialogue:
-    - Threatening me? How sexy
+    - Oh, you wanna play naughty? I'll eat thast right up.
     anim: 0
     scoreGain: 1
   - desired: 8
     dialogue:
-    - Dark humour?
+    - 'Witches being horrible is so cliche. '
     anim: 0
     scoreGain: -0.2

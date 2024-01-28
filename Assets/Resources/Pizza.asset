@@ -32,41 +32,41 @@ MonoBehaviour:
   opinions:
   - desired: 17
     dialogue:
-    - None - Fuck you
+    - You refuse to feed me? I'll serve ya a knuckle sandwitch, ya punk
     anim: 1
     scoreGain: 0
   - desired: 0
     dialogue:
-    - DAMN COOL
+    - Aight. Thought you were a stuck-up ass, but you know what's cool.
     anim: 0
     scoreGain: 1
   - desired: 5
     dialogue:
-    - Pizza, you serve me my son
+    - oh.... you DO want a piece of me. I'm free on Friday ;)
     anim: 0
-    scoreGain: 1
+    scoreGain: 3.5
   - desired: 4
     dialogue:
-    - Wicked dangerous
+    - Ayyy wicked! Ya aint such a scaredy rat after all.
     anim: 0
     scoreGain: 1
   - desired: 15
     dialogue:
-    - You threatening me?
+    - You wanna go bro? YOU WANNA GO BRO? AAAAAA
     anim: 1
-    scoreGain: -0.5
+    scoreGain: -1.5
   - desired: 16
     dialogue:
-    - Daddy?
+    - 'I didn''t... *sob* I.. I promise ''ll be better dad '
     anim: 0
     scoreGain: 1.2
   - desired: 14
     dialogue:
-    - Business if booooooring
+    - "I want none of that stuck up s\xA3$!t. Pathetic."
     anim: 0
-    scoreGain: -0.5
+    scoreGain: -1
   - desired: 7
     dialogue:
-    - Slapstick if funny
+    - Pfff, aight, I'll give it to ya, that one's a classic.
     anim: 0
     scoreGain: 0.8

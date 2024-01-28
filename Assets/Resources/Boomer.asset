@@ -28,41 +28,41 @@ MonoBehaviour:
   opinions:
   - desired: 17
     dialogue:
-    - None - Fuck you
+    - Okay, when I said not overcomplicated, I didn't mean nothng at all.
     anim: 1
     scoreGain: 0
   - desired: 2
     dialogue:
-    - Grow the f*ck up, sex, really?
-    anim: 1
+    - What are you, 12? Out of your league anyways.
+    anim: 2
     scoreGain: -0.5
   - desired: 4
     dialogue:
-    - THIS IS DANGEROUS
+    - WHERE'S YOUR MANAGER??!!
     anim: 1
-    scoreGain: -0.5
+    scoreGain: -2
   - desired: 10
     dialogue:
-    - Political commentary, yay
+    - yeah, you get me. The word's gone mad these days
     anim: 0
-    scoreGain: 1.5
+    scoreGain: 2.5
   - desired: 15
     dialogue:
-    - YOU THREATENING ME?
+    - 'SECURITY?! THIS GIRL IS THREATENING ME!! HELP! '
     anim: 1
-    scoreGain: 0.5
+    scoreGain: -2
   - desired: 1
     dialogue:
-    - Relatable, same bro
-    anim: 0
-    scoreGain: 1
+    - "What's this trendy bull\xA3$!\"? I demand a refund!"
+    anim: 1
+    scoreGain: -0.5
   - desired: 12
     dialogue:
-    - Relatable, same bro
+    - aww,, that's nice. Thanks, dear
     anim: 0
-    scoreGain: 1
+    scoreGain: 1.5
   - desired: 16
     dialogue:
-    - I have a dad
+    - ah yes, respecting your elders as you should. Very nice.
     anim: 0
-    scoreGain: 1
+    scoreGain: 2

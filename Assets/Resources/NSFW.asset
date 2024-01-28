@@ -29,31 +29,31 @@ MonoBehaviour:
   opinions:
   - desired: 17
     dialogue:
-    - Fuck You - None
+    - Bah! Don't play it safe with me!
     anim: 1
     scoreGain: 0
   - desired: 4
     dialogue:
-    - That's a dangerous
+    - Oh yeah, risk it for the biscuit. Love it.
     anim: 0
-    scoreGain: 1
+    scoreGain: 1.5
   - desired: 3
     dialogue:
-    - That's NSFW
+    - This! Is! AWESOME! I'd give you a raise if I could... Want a job?
     anim: 0
-    scoreGain: 1
+    scoreGain: 2.5
   - desired: 7
     dialogue:
-    - That's a slapstick
+    - '*snicker* okay, that''s a classic'
     anim: 0
-    scoreGain: 1
+    scoreGain: 1.5
   - desired: 8
     dialogue:
-    - Dark is messed up bro
+    - o...kaaayy? That's taking it a bit too far.
     anim: 0
-    scoreGain: 1
+    scoreGain: 0.5
   - desired: 2
     dialogue:
-    - Sex be funny
+    - Wait... NSFW means WHAT? Oh. OHHH
     anim: 0
     scoreGain: 1
