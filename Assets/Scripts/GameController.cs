@@ -214,6 +214,8 @@ public class GameController : MonoBehaviour
 
         audioManager.playServe();
         //Clear();
+
+        UI_Controller.instance.isServed = true;
     }
 
     public void Trash() 
