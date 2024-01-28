@@ -28,6 +28,8 @@ public class UI_Controller : MonoBehaviour
 
     //on shelf reload, these are the objects loaded
     [SerializeField] GameObject[] NewOptions = new GameObject[0];
+
+    public bool isServed;
     //public 
 
     void Awake()
@@ -71,11 +73,19 @@ public class UI_Controller : MonoBehaviour
     }
 
     public void AdvanceDialogue()
-    {
-        S_AudioManager.instance.handleCharacterSounds();
-        //Add current customer reference to GameController
-        if (dialogueScreen < GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count - 1) 
+    {     
+        if(GameController.instance.isCustomerFinished)
         {
+            return;
+        }
+
+
+        Debug.Log("ADVABCE");
+
+        //Add current customer reference to GameController
+        if (dialogueScreen < GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count - 1 && !isServed) 
+        {
+            S_AudioManager.instance.handleCharacterSounds();
             dialogueScreen++;
             AdvanceDialogueBox.alpha=1;
         }
@@ -86,6 +96,8 @@ public class UI_Controller : MonoBehaviour
     {
         if (GameController.instance.isCustomerFinished)
         {
+            AdvanceDialogueBox.alpha = 0;
+            isServed = false;
             PlayAnim("NewCustomer");
             GameController.instance.isCustomerFinished = false;
         }
