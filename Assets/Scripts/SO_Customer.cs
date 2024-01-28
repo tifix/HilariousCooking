@@ -39,6 +39,7 @@ public class SO_Customer : ScriptableObject
 
     public void Evaluate(List<string> ingredients, List<string> keywords) 
     {
+        UI_Controller.instance.DialogueDisplayer.text = "";
         int score = 0;
 
         List<string> found = new List<string>();
@@ -78,15 +79,22 @@ public class SO_Customer : ScriptableObject
         }
 
 
-        Debug.Log("Score = " +score);
+        
+
+        try 
+        {
+            Debug.Log("Score = " + score);
+            //if funky combo detected, make that the text
+            UI_Controller.instance.DialogueDisplayer.text = response[0];
+            Debug.Log(response[0]);
+        }
+        catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
 
 
+        //Suspend and when OnClickAnywhere, load next client
+        GameController.instance.StartCoroutine(GameController.instance.ClickAnywhereToProgress());
 
-        UI_Controller.instance.PlayAnim("NewCustomer");
-        //if funky combo detected, make that the text
-        UI_Controller.instance.DialogueDisplayer.text = response[0];
-
-        Debug.Log(response[0]);
+       
 
     }
 

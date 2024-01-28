@@ -820,8 +820,6 @@ MonoBehaviour:
   CHEAT_timescale: 1
   curDragged: {fileID: 0}
   snapPlatePosition: {fileID: 2579247513590846854}
-  camDragDistance: 100
-  isOverPlate: 0
   Customers:
   - {fileID: 11400000, guid: ee7561ca5c9e8264985876a2bc1d0e34, type: 2}
   - {fileID: 11400000, guid: 323b9bbc015fdea4bb9be3e7e4d25fbc, type: 2}
@@ -1991,7 +1989,9 @@ MonoBehaviour:
   ClientSpriteDspplayer: {fileID: 8479617673521316622}
   ClientTextBox: {fileID: 8023800166756435391}
   TextboxNonInverted: {fileID: 21300000, guid: b2b3796eff4c4e34bb9f92f22d68a613, type: 3}
-  audioManager: {fileID: 0}
+  AdvanceDialogueBox: {fileID: 6234143631847238111}
+  audioManager: {fileID: 519420036}
+  ES: {fileID: 8142700717721106050}
   NewOptions: []
 --- !u!224 &540955756362034629
 RectTransform:
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2042734900620268202}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &8172811207312754418
