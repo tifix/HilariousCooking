@@ -40,7 +40,7 @@ public class S_characterHandling : MonoBehaviour
     {
         UI_Controller.instance.DialogueDisplayer.text = "";
         float score = 0;
-        int grade = 0;
+        int grade = -1;
         int whichOpinion = 0;
 
         List<string> found = new List<string>();
@@ -79,7 +79,10 @@ public class S_characterHandling : MonoBehaviour
                 if (score >= g) { grade++; }
         }
         else
+        {
+            grade = 0;
             whichOpinion = 0;
+        }
 
 
 

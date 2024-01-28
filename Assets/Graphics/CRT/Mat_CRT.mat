@@ -63,8 +63,8 @@ Material:
     - _QueueOffset: 0
     - _ScanningLines: 23
     - _ScanningLinesSpeed: 0.5
-    - _SpeedMax: 0.15
-    - _SpeedMin: 0.04
+    - _SpeedMax: 0.01
+    - _SpeedMin: 0.005
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
