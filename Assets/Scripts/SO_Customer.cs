@@ -91,6 +91,7 @@ public class SO_Customer : ScriptableObject
         catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
 
 
+        //setting this means whenever a click anywhere is detected - it'll advance to the next customer
         GameController.instance.isCustomerFinished = true;
 
     }
