@@ -31,9 +31,9 @@ public class SO_Customer : ScriptableObject
 
     public enum responseAnim
     {
-        happy,
-        unhappy,
-        indifferent
+        HappyCustomer,
+        UnhappyCustomer,
+        IndifferentCustomer
     }
 
 

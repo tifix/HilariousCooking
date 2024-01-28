@@ -149,6 +149,8 @@ public class GameController : MonoBehaviour
                 {
                     allCurrentKeywords.Add(k.ToString());
                 }
+
+                Debug.Log(c + "Combos with " + cS);
             }
         }
     }

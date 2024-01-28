@@ -30,7 +30,7 @@ MonoBehaviour:
   - desired: 16
     dialogue:
     - Fuck You - None
-    anim: 0
+    anim: 1
     scoreGain: 0
   - desired: 4
     dialogue:

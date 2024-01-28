@@ -22,14 +22,13 @@ public class S_characterHandling : MonoBehaviour
     public void startCharacter(SO_Customer customer)
     {
 
-        Debug.Log("START CHARACTER = " +customer+ " with " +customer.opinions.Count);
         currentCustomer = customer;
         desiredInString.Clear();
         ammount.Clear();
 
         foreach (responsess r in currentCustomer.opinions)
         {
-            Debug.Log("desires  " + r.desired.ToString());
+
             desiredInString.Add(r.desired.ToString());
             ammount.Add(0);
         }
@@ -42,6 +41,7 @@ public class S_characterHandling : MonoBehaviour
         UI_Controller.instance.DialogueDisplayer.text = "";
         float score = 0;
         int grade = 0;
+        int whichOpinion = 0;
 
         List<string> found = new List<string>();
 
@@ -70,39 +70,28 @@ public class S_characterHandling : MonoBehaviour
 
         //Checks for what the highest in the int string that pararels the string list. Then sets the response at the equal index to be the set response.
         int highest = ammount.Max();
-        if(highest > 0 && score >= currentCustomer.gradeThresholds[1])
+        if (highest > 0 && score >= currentCustomer.gradeThresholds[1])
         {
             int i = ammount.IndexOf(highest);
-            response = currentCustomer.opinions[i].dialogue;
+            whichOpinion = i;
 
-            foreach(int g in currentCustomer.gradeThresholds)
-                if(score >= g) { grade++; }
+            foreach (int g in currentCustomer.gradeThresholds)
+                if (score >= g) { grade++; }
         }
         else
-            response = currentCustomer.opinions[0].dialogue;
+            whichOpinion = 0;
 
-        //if (response == null)
-        //{
-        //    if (score == 0)
-        //        response = currentCustomer.opinions[0].dialogue;
-        //    else
-        //    {
-        //        for (int i = 0; i < currentCustomer.opinions.Count; i++)
-        //        {
-        //            if (found[0] == currentCustomer.opinions[i].desired.ToString())
-        //                response = currentCustomer.opinions[i].dialogue;
-        //        }
-        //    }
 
-        //}
 
 
         try
         {
             Debug.Log("Score = " + score+ " Grade = " +grade);
             //Response related to most common keywords becomes the text
+            response = currentCustomer.opinions[whichOpinion].dialogue;
             UI_Controller.instance.DialogueDisplayer.text = response[0];
-            Debug.Log(response[0]);
+            UI_Controller.instance.PlayAnim(currentCustomer.opinions[whichOpinion].anim.ToString());
+
 
         }
         catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
