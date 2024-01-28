@@ -64,7 +64,7 @@ public class S_characterHandling : MonoBehaviour
                 //            response = currentCustomer.opinions[i].dialogue;
                 //    }
                 //}
-                //found.Add(k);
+                found.Add(k);
             }
         }
 
@@ -85,16 +85,18 @@ public class S_characterHandling : MonoBehaviour
         }
 
 
-
-
         try
         {
             Debug.Log("Score = " + score+ " Grade = " +grade);
-            //Response related to most common keywords becomes the text
+            //Response related to most common keywords becomes the text and triggers its animation
             response = currentCustomer.opinions[whichOpinion].dialogue;
             UI_Controller.instance.DialogueDisplayer.text = response[0];
             UI_Controller.instance.PlayAnim(currentCustomer.opinions[whichOpinion].anim.ToString());
 
+            foreach (string s in found)
+            {
+                Debug.Log("This contains" + s);
+            }
 
         }
         catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
