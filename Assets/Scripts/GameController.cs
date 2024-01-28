@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static DraggableData;
 
@@ -12,6 +14,7 @@ public class GameController : MonoBehaviour
     [Range(0,2)] public float CHEAT_timescale = 1;
     public GameObject curDragged = null;
 
+    public int scoreTotal = 0;
     public Transform snapPlatePosition;
     float camDragDistance = 100;
     bool isOverPlate;
@@ -31,10 +34,12 @@ public class GameController : MonoBehaviour
         audioManager = GetComponent<S_AudioManager>();
     }
     public void QuitGame() => Application.Quit();
-    
+    public void RestartGame() => SceneManager.LoadScene(0);
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
+        if(Input.GetKeyDown(KeyCode.R)) { RestartGame(); }
         ProcessDraggable();
     }
 
@@ -214,5 +219,9 @@ public class GameController : MonoBehaviour
     public void Win() 
     {
         Debug.LogWarning("Congratulations! You win!");
-    }
+        UI_Controller.instance.PlayAnim("Win");
+        UI_Controller.instance.WinScreenScore.text=scoreTotal.ToString()+"$";
+
+
+}
 }

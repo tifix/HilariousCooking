@@ -96,6 +96,8 @@ public class S_characterHandling : MonoBehaviour
         }
         catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
 
+        //Adding the customer score to the total combined score
+        GameController.instance.scoreTotal+= Mathf.RoundToInt(score * 10);
 
         //setting this means whenever a click anywhere is detected - it'll advance to the next customer
         GameController.instance.isCustomerFinished = true;

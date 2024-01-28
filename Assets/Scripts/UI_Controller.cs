@@ -16,6 +16,7 @@ public class UI_Controller : MonoBehaviour
 
     public int dialogueScreen = -1;
     public TextMeshProUGUI DialogueDisplayer;
+    public TextMeshProUGUI WinScreenScore;
     public Image ClientSpriteDspplayer;
     public Image ClientTextBox;
     public Sprite TextboxNonInverted;

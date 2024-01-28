@@ -29,13 +29,17 @@ public class S_AudioManager : MonoBehaviour
     public AudioClip cookingMusic;
 
     [Header("Audio Sources")]
-    AudioSource menuSource;
-    public AudioSource characterSource;
-    public AudioSource MusicSource;
-    public AudioSource Source4;
+    public AudioSource sourceMain;
+    public AudioSource sourceCharacter;
+    public AudioSource sourceMusic;
+    public AudioSource sourceSFX;
     private void Start()
     {
-        menuSource = GetComponent<AudioSource>();
+        if(sourceMain==null)             sourceMain = GetComponent<AudioSource>();
+        if(sourceCharacter == null)     sourceMain = transform.GetChild(1).GetComponent<AudioSource>();
+        if(sourceMusic == null)         sourceMain = transform.GetChild(2).GetComponent<AudioSource>();
+        if(sourceSFX == null)         sourceMain = transform.GetChild(3).GetComponent<AudioSource>();
+        //sourceMain = GetComponent<AudioSource>();
         StartMenuMusic();
     }
 
@@ -45,8 +49,8 @@ public class S_AudioManager : MonoBehaviour
         if (BoomerTalk.Length > 0)
         {
             int rand = Random.Range(0, BoomerTalk.Length);
-            characterSource.clip = BoomerTalk[rand];
-            characterSource.Play();
+            sourceCharacter.clip = BoomerTalk[rand];
+            sourceCharacter.Play();
         }
     }
 
@@ -55,8 +59,8 @@ public class S_AudioManager : MonoBehaviour
         if (NSFWTalk.Length > 0)
         {
             int rand = Random.Range(0, NSFWTalk.Length);
-            characterSource.clip = NSFWTalk[rand];
-            characterSource.Play();
+            sourceCharacter.clip = NSFWTalk[rand];
+            sourceCharacter.Play();
         }
     }
 
@@ -65,8 +69,8 @@ public class S_AudioManager : MonoBehaviour
         if (babaTalk.Length > 0)
         {
             int rand = Random.Range(0, NSFWTalk.Length);
-            characterSource.clip = NSFWTalk[rand];
-            characterSource.Play();
+            sourceCharacter.clip = NSFWTalk[rand];
+            sourceCharacter.Play();
         }
     }
 
@@ -75,8 +79,8 @@ public class S_AudioManager : MonoBehaviour
         if (pizzaTalk.Length > 0)
         {
             int rand = Random.Range(0, NSFWTalk.Length);
-            characterSource.clip = NSFWTalk[rand];
-            characterSource.Play();
+            sourceCharacter.clip = NSFWTalk[rand];
+            sourceCharacter.Play();
         }
     }
 
@@ -84,8 +88,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (click.Length > 0) {
         int rand = Random.Range(0, click.Length);
-        menuSource.clip = click[rand];
-        menuSource.Play();
+        sourceMain.clip = click[rand];
+        sourceMain.Play();
         }
     }
 
@@ -94,8 +98,8 @@ public class S_AudioManager : MonoBehaviour
         if (startSound.Length > 0)
         {
             int rand = Random.Range(0, startSound.Length);
-            menuSource.clip = startSound[rand];
-            menuSource.Play();
+            sourceMain.clip = startSound[rand];
+            sourceMain.Play();
         }
     }
 
@@ -104,8 +108,8 @@ public class S_AudioManager : MonoBehaviour
         if (quitSound.Length > 0)
         {
             int rand = Random.Range(0, quitSound.Length);
-            menuSource.clip = quitSound[rand];
-            menuSource.Play();
+            sourceMain.clip = quitSound[rand];
+            sourceMain.Play();
         }
     }
 
@@ -113,8 +117,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (menuMusic != null)
         {
-            MusicSource.clip = menuMusic;
-            MusicSource.Play();
+            sourceMusic.clip = menuMusic;
+            sourceMusic.Play();
         }
     }
 
@@ -122,8 +126,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (cookingMusic != null)
         {
-            MusicSource.clip = cookingMusic;
-            MusicSource.Play();
+            sourceMusic.clip = cookingMusic;
+            sourceMusic.Play();
         }
     }
 
@@ -131,8 +135,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (ingSound != null)
         {
-            Source4.clip = ingSound;
-            Source4.Play();
+            sourceSFX.clip = ingSound;
+            sourceSFX.Play();
         }
     }
 
@@ -141,8 +145,8 @@ public class S_AudioManager : MonoBehaviour
         if (pickUp.Length > 0)
         {
             int rand = Random.Range(0, pickUp.Length);
-            menuSource.clip = pickUp[rand];
-            menuSource.Play();
+            sourceMain.clip = pickUp[rand];
+            sourceMain.Play();
         }
     }
 
@@ -152,8 +156,8 @@ public class S_AudioManager : MonoBehaviour
         if (putDown.Length > 0)
         {
             int rand = Random.Range(0, putDown.Length);
-            menuSource.clip = putDown[rand];
-            menuSource.Play();
+            sourceMain.clip = putDown[rand];
+            sourceMain.Play();
         }
     }
 
@@ -162,8 +166,8 @@ public class S_AudioManager : MonoBehaviour
         if (serve.Length > 0)
         {
             int rand = Random.Range(0, serve.Length);
-            Source4.clip = serve[rand];
-            Source4.Play();
+            sourceSFX.clip = serve[rand];
+            sourceSFX.Play();
         }
     }
 
@@ -172,8 +176,8 @@ public class S_AudioManager : MonoBehaviour
         if (trash.Length > 0)
         {
             int rand = Random.Range(0, trash.Length);
-            Source4.clip = trash[rand];
-            Source4.Play();
+            sourceSFX.clip = trash[rand];
+            sourceSFX.Play();
         }
     }
 
