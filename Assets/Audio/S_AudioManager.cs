@@ -6,34 +6,29 @@ using UnityEngine;
 public class S_AudioManager : MonoBehaviour
 {
     [Header("Main Menu Sounds")]
-    public AudioClip startSound;
-    public AudioClip quitSound;
+    public AudioClip[] startSound;
+    public AudioClip[] quitSound;
 
     [Header("Characters")]
     public AudioClip[] NSFWTalk;
-    public AudioClip[] NSFWHappy;
-    public AudioClip[] NSFWLaugh;
-    public AudioClip[] NSFWUnhappy;
     public AudioClip[] BoomerTalk;
-    public AudioClip[] BoomerHappy;
-    public AudioClip[] BoomerLaugh;
-    public AudioClip[] BoomerUnhappy;
-    public AudioClip[] OtherTalk;
+    public AudioClip[] pizzaTalk;
+    public AudioClip[] babaTalk;
 
     [Header("Universal")]
-    public AudioClip click;
-    public AudioClip pickUp;
-    public AudioClip putDown;
+    public AudioClip[] click;
+    public AudioClip[] pickUp;
+    public AudioClip[] putDown;
 
     [Header("CookingSounds")]
-    public AudioClip trash;
-    public AudioClip serve;
+    public AudioClip[] trash;
+    public AudioClip[] serve;
 
     [Header("Music")]
     public AudioClip menuMusic;
     public AudioClip cookingMusic;
 
-
+    [Header("Audio Sources")]
     AudioSource menuSource;
     public AudioSource characterSource;
     public AudioSource MusicSource;
@@ -65,28 +60,51 @@ public class S_AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayBabaSound()
+    {
+        if (babaTalk.Length > 0)
+        {
+            int rand = Random.Range(0, NSFWTalk.Length);
+            characterSource.clip = NSFWTalk[rand];
+            characterSource.Play();
+        }
+    }
+
+    public void PlayPizzaSound()
+    {
+        if (pizzaTalk.Length > 0)
+        {
+            int rand = Random.Range(0, NSFWTalk.Length);
+            characterSource.clip = NSFWTalk[rand];
+            characterSource.Play();
+        }
+    }
+
     public void PlayMenuClick()
     {
-        if (click != null) { 
-        menuSource.clip = click;
+        if (click.Length > 0) {
+        int rand = Random.Range(0, click.Length);
+        menuSource.clip = click[rand];
         menuSource.Play();
         }
     }
 
     public void PlayMainStart()
     {
-        if (click != startSound)
+        if (startSound.Length > 0)
         {
-            menuSource.clip = startSound;
+            int rand = Random.Range(0, startSound.Length);
+            menuSource.clip = startSound[rand];
             menuSource.Play();
         }
     }
 
     public void PlayMainExit()
     {
-        if (quitSound != null)
+        if (quitSound.Length > 0)
         {
-            menuSource.clip = quitSound;
+            int rand = Random.Range(0, quitSound.Length);
+            menuSource.clip = quitSound[rand];
             menuSource.Play();
         }
     }
@@ -120,9 +138,10 @@ public class S_AudioManager : MonoBehaviour
 
     public void playPickup()
     {
-        if (pickUp != null)
+        if (pickUp.Length > 0)
         {
-            menuSource.clip = pickUp;
+            int rand = Random.Range(0, pickUp.Length);
+            menuSource.clip = pickUp[rand];
             menuSource.Play();
         }
     }
@@ -130,27 +149,30 @@ public class S_AudioManager : MonoBehaviour
 
     public void playPutDown()
     {
-        if (putDown != null)
+        if (putDown.Length > 0)
         {
-            menuSource.clip = putDown;
+            int rand = Random.Range(0, putDown.Length);
+            menuSource.clip = putDown[rand];
             menuSource.Play();
         }
     }
 
     public void playServe()
     {
-        if (serve != null)
+        if (serve.Length > 0)
         {
-            Source4.clip = serve;
+            int rand = Random.Range(0, serve.Length);
+            Source4.clip = serve[rand];
             Source4.Play();
         }
     }
 
     public void playTrash()
     {
-        if (trash != null)
+        if (trash.Length > 0)
         {
-            Source4.clip = trash;
+            int rand = Random.Range(0, trash.Length);
+            Source4.clip = trash[rand];
             Source4.Play();
         }
     }
