@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class GameController : MonoBehaviour
     [Range(0,2)] public float CHEAT_timescale = 1;
     public GameObject curDragged = null;
 
+    public int scoreTotal = 0;
     public Transform snapPlatePosition;
     float camDragDistance = 100;
     bool isOverPlate;
@@ -218,5 +220,9 @@ public class GameController : MonoBehaviour
     public void Win() 
     {
         Debug.LogWarning("Congratulations! You win!");
-    }
+        UI_Controller.instance.PlayAnim("Win");
+        UI_Controller.instance.WinScreenScore.text=scoreTotal.ToString()+"$";
+
+
+}
 }
