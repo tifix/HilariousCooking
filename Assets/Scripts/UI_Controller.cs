@@ -36,6 +36,7 @@ public class UI_Controller : MonoBehaviour
     void Start()
     {
         OnDrawerOpen("Remove"); //Default open to edible drawer
+        S_characterHandling.instance.startCharacter(GameController.instance.Customers[GameController.instance.curCustomer]);
     }
 
 
@@ -93,12 +94,14 @@ public class UI_Controller : MonoBehaviour
     {
         //when out of bounds, all customers done, win!
         GameController.instance.curCustomer++;
-        if(GameController.instance.curCustomer>= GameController.instance.Customers.Length) { GameController.instance.Win(); return; }  
+        if(GameController.instance.curCustomer>= GameController.instance.Customers.Length) { GameController.instance.Win(); return; }
 
+        S_characterHandling.instance.startCharacter(GameController.instance.Customers[GameController.instance.curCustomer]);
 
         ClientTextBox.sprite = TextboxNonInverted;
 
         dialogueScreen = -1; //Reset the dialogue to the initial first screen;
+
         DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[0];
         ClientSpriteDspplayer.sprite = GameController.instance.Customers[GameController.instance.curCustomer].image;
 

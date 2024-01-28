@@ -24,3 +24,20 @@ MonoBehaviour:
   - energizing...
   - healthy...
   - POWERFUL!!!
+  gradeThresholds: 00000000040000000600000007000000
+  opinions:
+  - desired: 16
+    dialogue:
+    - None - Fuck you
+    anim: 1
+    scoreGain: 0
+  - desired: 6
+    dialogue:
+    - Nice Nut
+    anim: 0
+    scoreGain: 0.8
+  - desired: 14
+    dialogue:
+    - Professional, I like that
+    anim: 0
+    scoreGain: 1

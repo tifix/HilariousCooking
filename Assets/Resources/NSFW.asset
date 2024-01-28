@@ -25,4 +25,35 @@ MonoBehaviour:
   - ...or bones
   - haven't happened to me yet, thankfully
   - could I get something awesome before I tip over?
-  opinions: []
+  gradeThresholds: 00000000040000000600000007000000
+  opinions:
+  - desired: 16
+    dialogue:
+    - Fuck You - None
+    anim: 0
+    scoreGain: 0
+  - desired: 4
+    dialogue:
+    - That's a dangerous
+    anim: 0
+    scoreGain: 1
+  - desired: 3
+    dialogue:
+    - That's NSFW
+    anim: 0
+    scoreGain: 1
+  - desired: 7
+    dialogue:
+    - That's a slapstick
+    anim: 0
+    scoreGain: 1
+  - desired: 8
+    dialogue:
+    - Dark is messed up bro
+    anim: 0
+    scoreGain: 1
+  - desired: 2
+    dialogue:
+    - Sex be funny
+    anim: 0
+    scoreGain: 1

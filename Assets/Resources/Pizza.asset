@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   Name: MuscleMan
-  desired: 00000000010000000a00000004000000050000000b000000
+  desired: 
   image: {fileID: 21300000, guid: a5d41b98f534dd644a1cb3f387d230ab, type: 3}
   dialogue:
   - Oi bruv!
@@ -28,4 +28,35 @@ MonoBehaviour:
   - For real.
   - he's a senator, he can mes syou up bigtime.
   - so gimme something gangsta and be quick about it
-  opinions: []
+  gradeThresholds: 00000000040000000600000007000000
+  opinions:
+  - desired: 16
+    dialogue:
+    - None - Fuck you
+    anim: 1
+    scoreGain: 0
+  - desired: 0
+    dialogue:
+    - DAMN COOL
+    anim: 0
+    scoreGain: 1
+  - desired: 5
+    dialogue:
+    - Pizza, you serve me my son
+    anim: 0
+    scoreGain: 1
+  - desired: 4
+    dialogue:
+    - Wicked dangerous
+    anim: 0
+    scoreGain: 1
+  - desired: 15
+    dialogue:
+    - You threatening me?
+    anim: 1
+    scoreGain: 1
+  - desired: 11
+    dialogue:
+    - You mean bro?
+    anim: 0
+    scoreGain: 1
