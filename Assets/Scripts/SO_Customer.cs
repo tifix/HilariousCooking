@@ -91,10 +91,7 @@ public class SO_Customer : ScriptableObject
         catch { Debug.LogWarning("Combo detection broke! Triggering wait for next"); }
 
 
-        //Suspend and when OnClickAnywhere, load next client
-        GameController.instance.StartCoroutine(GameController.instance.ClickAnywhereToProgress());
-
-       
+        GameController.instance.isCustomerFinished = true;
 
     }
 

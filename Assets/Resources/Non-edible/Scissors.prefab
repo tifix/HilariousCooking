@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 899463982987243338, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 2d9f5c8438177f449bdcfac4dbbb6c4d, type: 3}
     - target: {fileID: 3373371801969662203, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: m_Name
       value: Scissors

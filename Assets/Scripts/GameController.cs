@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public List<string> allCurrentKeywords = new List<string>();
 
     S_AudioManager audioManager;
+    public bool isCustomerFinished = false;
 
     void Awake()
     {
@@ -182,17 +183,6 @@ public class GameController : MonoBehaviour
     }
 
 
-    public IEnumerator ClickAnywhereToProgress() 
-    {
-        while (true) 
-        {
-            Debug.Log("A");
-            yield return new WaitForEndOfFrame();
-            if(Input.anyKeyDown || Input.GetMouseButtonDown(0)) break;
-        }
-        Debug.Log("B");
-        UI_Controller.instance.PlayAnim("NewCustomer");
-    }
 
 
 

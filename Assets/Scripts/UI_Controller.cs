@@ -20,7 +20,7 @@ public class UI_Controller : MonoBehaviour
     public Image ClientTextBox;
     public Sprite TextboxNonInverted;
 
-    public GameObject AdvanceDialogueBox;
+    public CanvasGroup AdvanceDialogueBox;
 
     public S_AudioManager audioManager;
     [SerializeField] private  EventSystem ES;
@@ -74,11 +74,21 @@ public class UI_Controller : MonoBehaviour
         if (dialogueScreen < GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count - 1) 
         {
             dialogueScreen++;
-            AdvanceDialogueBox.SetActive(true);
+            AdvanceDialogueBox.alpha=1;
         }
-        else { AdvanceDialogueBox.SetActive(false); }
+        else { AdvanceDialogueBox.alpha=0; }
         DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[dialogueScreen];
     }
+    public void AdvanceToNextCustomer() 
+    {
+        if (GameController.instance.isCustomerFinished)
+        {
+            PlayAnim("NewCustomer");
+            GameController.instance.isCustomerFinished = false;
+        }
+
+    }
+
     public void LoadCustomerData()
     {
         //when out of bounds, all customers done, win!
