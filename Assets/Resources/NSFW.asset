@@ -25,9 +25,9 @@ MonoBehaviour:
   - ...or bones
   - haven't happened to me yet, thankfully
   - could I get something awesome before I tip over?
-  gradeThresholds: 00000000040000000600000007000000
+  gradeThresholds: 00000000020000000400000005000000
   opinions:
-  - desired: 16
+  - desired: 17
     dialogue:
     - Fuck You - None
     anim: 1

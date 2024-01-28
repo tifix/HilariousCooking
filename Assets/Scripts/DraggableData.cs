@@ -110,10 +110,11 @@ public class DraggableData : MonoBehaviour
         Meme,
         Commentary,
         Mean,
-        Friendly,
+        Sweet,
         Relaxing,
         Business,
         Threatening,
+        Dad,
         None
     }
 

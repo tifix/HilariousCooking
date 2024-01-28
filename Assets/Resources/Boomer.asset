@@ -24,18 +24,18 @@ MonoBehaviour:
   - alright there sonny. Gimme something nice and simple
   - like they did it back in the day
   - and I swear to the lord above, if you people have some dumb app
-  gradeThresholds: 00000000040000000600000007000000
+  gradeThresholds: 00000000020000000400000005000000
   opinions:
-  - desired: 16
+  - desired: 17
     dialogue:
     - None - Fuck you
     anim: 1
     scoreGain: 0
   - desired: 2
     dialogue:
-    - I actually like sex
-    anim: 0
-    scoreGain: 1
+    - Grow the f*ck up, sex, really?
+    anim: 1
+    scoreGain: -0.5
   - desired: 4
     dialogue:
     - THIS IS DANGEROUS
@@ -45,14 +45,24 @@ MonoBehaviour:
     dialogue:
     - Political commentary, yay
     anim: 0
-    scoreGain: 0.8
+    scoreGain: 1.5
   - desired: 15
     dialogue:
-    - YOU THREATENING ME
+    - YOU THREATENING ME?
     anim: 1
     scoreGain: 0.5
   - desired: 1
     dialogue:
     - Relatable, same bro
+    anim: 0
+    scoreGain: 1
+  - desired: 12
+    dialogue:
+    - Relatable, same bro
+    anim: 0
+    scoreGain: 1
+  - desired: 16
+    dialogue:
+    - I have a dad
     anim: 0
     scoreGain: 1

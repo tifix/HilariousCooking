@@ -28,9 +28,9 @@ MonoBehaviour:
   - For real.
   - he's a senator, he can mes syou up bigtime.
   - so gimme something gangsta and be quick about it
-  gradeThresholds: 00000000040000000600000007000000
+  gradeThresholds: 00000000020000000400000005000000
   opinions:
-  - desired: 16
+  - desired: 17
     dialogue:
     - None - Fuck you
     anim: 1
@@ -54,9 +54,19 @@ MonoBehaviour:
     dialogue:
     - You threatening me?
     anim: 1
-    scoreGain: 1
-  - desired: 11
+    scoreGain: -0.5
+  - desired: 16
     dialogue:
-    - You mean bro?
+    - Daddy?
     anim: 0
-    scoreGain: 1
+    scoreGain: 1.2
+  - desired: 14
+    dialogue:
+    - Business if booooooring
+    anim: 0
+    scoreGain: -0.5
+  - desired: 7
+    dialogue:
+    - Slapstick if funny
+    anim: 0
+    scoreGain: 0.8

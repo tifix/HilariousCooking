@@ -105,7 +105,6 @@ public class GameController : MonoBehaviour
 
         D.isAdded = true;
         AddCompleteCombos(D);
-        Debug.Log(allCurrentKeywords.Count);
 
         showUpdatedLists();
     }
@@ -150,7 +149,7 @@ public class GameController : MonoBehaviour
                     allCurrentKeywords.Add(k.ToString());
                 }
 
-                Debug.Log(c + "Combos with " + cS);
+                Debug.Log(D.Properties.name + "Combos with " + cS);
             }
         }
     }
@@ -175,7 +174,7 @@ public class GameController : MonoBehaviour
     void showUpdatedLists()
     {
         //Debug.Log("Ingredients = "+currentIngredients+ "At Length = " +currentIngredients.Count);
-        //Debug.Log("Keywords = " + allCurrentKeywords + "At Length = " + allCurrentKeywords.Count);
+        Debug.Log("Keywords = " + allCurrentKeywords + "At Length = " + allCurrentKeywords.Count);
     }
 
 

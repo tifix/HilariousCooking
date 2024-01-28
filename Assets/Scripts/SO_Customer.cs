@@ -14,7 +14,7 @@ public class SO_Customer : ScriptableObject
     public List<keywords> desired;
     public Sprite image;
     public List<string> dialogue= new List<string>();
-    public int[] gradeThresholds = { 0, 4, 6, 9 };
+    public int[] gradeThresholds = { 0, 2, 4, 7 };
 
     public List<responsess> opinions;
 

@@ -24,9 +24,9 @@ MonoBehaviour:
   - energizing...
   - healthy...
   - POWERFUL!!!
-  gradeThresholds: 00000000040000000600000007000000
+  gradeThresholds: 00000000020000000400000005000000
   opinions:
-  - desired: 16
+  - desired: 17
     dialogue:
     - None - Fuck you
     anim: 1
@@ -35,9 +35,29 @@ MonoBehaviour:
     dialogue:
     - Nice Nut
     anim: 0
-    scoreGain: 0.8
+    scoreGain: 1
   - desired: 14
     dialogue:
     - Professional, I like that
     anim: 0
     scoreGain: 1
+  - desired: 2
+    dialogue:
+    - As a slut, sex = good
+    anim: 0
+    scoreGain: 1.3
+  - desired: 12
+    dialogue:
+    - Oh you are sweet
+    anim: 0
+    scoreGain: 1.4
+  - desired: 15
+    dialogue:
+    - Threatening me? How sexy
+    anim: 0
+    scoreGain: 1
+  - desired: 8
+    dialogue:
+    - Dark humour?
+    anim: 0
+    scoreGain: -0.2
