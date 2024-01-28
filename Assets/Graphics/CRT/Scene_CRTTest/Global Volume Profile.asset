@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: -9.9
+    m_Value: -5
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 0.9850629, b: 0.9103774, a: 1}
@@ -43,7 +43,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.094
+    m_Value: 0.07
 --- !u!114 &-4115473618814377239
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -84,12 +84,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.388
+    m_Value: 0.218
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.207
+    m_Value: 0.851
   rounded:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-2826187222264653475
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
     m_Value: 5
   intensity:
     m_OverrideState: 1
-    m_Value: 0.376
+    m_Value: 0.12
   response:
     m_OverrideState: 1
     m_Value: 0.775
@@ -137,7 +137,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0.7
   scatter:
     m_OverrideState: 0
     m_Value: 0.805
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 5
   aperture:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5.6
   focalLength:
     m_OverrideState: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.091
+    m_Value: 0.051
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -278,8 +278,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.7217901, y: 0.9073413, z: 1, w: 0}
   midtones:
-    m_OverrideState: 0
-    m_Value: {x: 0.9796258, y: 1, z: 0.9592526, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9896002, z: 0.9730898, w: 0.04864478}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 0.95705086, y: 0.954443, z: 1, w: 0}
@@ -310,7 +310,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.087
+    m_Value: 0.067
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 0
     m_Value: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.751
+    m_Value: 1
   clamp:
-    m_OverrideState: 0
-    m_Value: 0.05
+    m_OverrideState: 1
+    m_Value: 0.0427

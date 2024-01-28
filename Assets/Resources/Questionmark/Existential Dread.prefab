@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Properties.tags.Array.data[2]
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Properties.tags.Array.data[3]

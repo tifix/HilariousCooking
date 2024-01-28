@@ -72,6 +72,7 @@ public class UI_Controller : MonoBehaviour
 
     public void AdvanceDialogue()
     {
+        S_AudioManager.instance.handleCharacterSounds();
         //Add current customer reference to GameController
         if (dialogueScreen < GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count - 1) 
         {
