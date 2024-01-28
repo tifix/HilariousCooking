@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2001a8383fe4c524089838d18e332345, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  Name: MuscleMan
+  Name: PizzaMan
   desired: 
   image: {fileID: 21300000, guid: a5d41b98f534dd644a1cb3f387d230ab, type: 3}
   dialogue:

@@ -33,7 +33,20 @@ public class GameController : MonoBehaviour
         if (instance == null) instance = this;
         audioManager = GetComponent<S_AudioManager>();
     }
-    public void QuitGame() => Application.Quit();
+    public void QuitGame()
+    {
+        audioManager.PlayMainExit();
+        StartCoroutine(exitGame());
+    }
+
+    IEnumerator exitGame()
+    {
+
+        yield return new WaitForSeconds(1.6f);
+        Debug.Log("EXIT");
+        Application.Quit();
+    }
+
     public void RestartGame() => SceneManager.LoadScene(0);
 
     void Update()

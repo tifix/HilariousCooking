@@ -33,6 +33,8 @@ public class S_AudioManager : MonoBehaviour
     public AudioSource sourceCharacter;
     public AudioSource sourceMusic;
     public AudioSource sourceSFX;
+
+    public static S_AudioManager instance;
     private void Start()
     {
         if(sourceMain==null)             sourceMain = GetComponent<AudioSource>();
@@ -41,8 +43,29 @@ public class S_AudioManager : MonoBehaviour
         if(sourceSFX == null)         sourceMain = transform.GetChild(3).GetComponent<AudioSource>();
         //sourceMain = GetComponent<AudioSource>();
         StartMenuMusic();
+        S_AudioManager.instance = this;
     }
 
+    public void handleCharacterSounds()
+    {
+        
+        string name = GameController.instance.Customers[GameController.instance.curCustomer].Name;
+        switch (name)
+        {
+            case "BoomerLady":
+                PlayBoomerSound();
+                break;
+            case "BabaYoga":
+                PlayBabaSound();
+                break;
+            case "NSFWGuy":
+                PlayNSFWSound();
+                break;
+            case "PizzaMan":
+                PlayPizzaSound();
+                break;
+        }
+    }
 
     public void PlayBoomerSound()
     {
@@ -56,6 +79,7 @@ public class S_AudioManager : MonoBehaviour
 
     public void PlayNSFWSound()
     {
+        Debug.Log("playnsfw");
         if (NSFWTalk.Length > 0)
         {
             int rand = Random.Range(0, NSFWTalk.Length);
@@ -68,8 +92,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (babaTalk.Length > 0)
         {
-            int rand = Random.Range(0, NSFWTalk.Length);
-            sourceCharacter.clip = NSFWTalk[rand];
+            int rand = Random.Range(0, babaTalk.Length);
+            sourceCharacter.clip = babaTalk[rand];
             sourceCharacter.Play();
         }
     }
@@ -78,8 +102,8 @@ public class S_AudioManager : MonoBehaviour
     {
         if (pizzaTalk.Length > 0)
         {
-            int rand = Random.Range(0, NSFWTalk.Length);
-            sourceCharacter.clip = NSFWTalk[rand];
+            int rand = Random.Range(0, pizzaTalk.Length);
+            sourceCharacter.clip = pizzaTalk[rand];
             sourceCharacter.Play();
         }
     }
