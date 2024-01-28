@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static SO_Customer;
-using static UnityEditor.Progress;
 
 public class S_characterHandling : MonoBehaviour
 {
