@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2001a8383fe4c524089838d18e332345, type: 3}
   m_Name: Pizza
   m_EditorClassIdentifier: 
-  Name: 
+  Name: MuscleMan
   desired: 00000000010000000a00000004000000050000000b000000
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: a5d41b98f534dd644a1cb3f387d230ab, type: 3}
   dialogue:
   - Oi bruv!
   - whaddya think you're pulling off here?
@@ -23,7 +23,9 @@ MonoBehaviour:
   - You want a piece of me?
   - You want a piece of this?!
   - If ya think you can hide behind all this...
-  - snazzy facade
-  - my dad's gonna mess you up
-  - he's a senator, he can mes syou up bigtime
-  - so gimme something good and be quick about it
+  - snazzy facade.
+  - 'my dad''s gonna mess you up. '
+  - For real.
+  - he's a senator, he can mes syou up bigtime.
+  - so gimme something gangsta and be quick about it
+  opinions: []

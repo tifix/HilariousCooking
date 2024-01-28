@@ -13,23 +13,16 @@ MonoBehaviour:
   m_Name: NSFW
   m_EditorClassIdentifier: 
   Name: Not Safe for Work
-  desired: 
-  image: {fileID: 1873877962, guid: 63aeca16aba09f4439d63cd2e22083c7, type: 3}
+  desired: 0400000003000000020000000700000008000000
+  image: {fileID: 21300000, guid: 56c0832f3b1d4124cae54cb2afaab819, type: 3}
   dialogue:
   - Woah there buddy!
   - Is this place osha compliant?
   - 'Sure hope so. '
-  - I live for my work and my work
-  opinions:
-  - desired: 16
-    dialogue:
-    - Fuck you
-  - desired: 3
-    dialogue:
-    - This is satisfyingly NSFW
-  - desired: 7
-    dialogue:
-    - I like pain on others
-  - desired: 8
-    dialogue:
-    - Darkness Imprissoning me
+  - I live for my work and my work makes me feel alive
+  - you know what they say
+  - can't break a record without breaking a few rules
+  - ...or bones
+  - haven't happened to me yet, thankfully
+  - could I get something awesome before I tip over?
+  opinions: []

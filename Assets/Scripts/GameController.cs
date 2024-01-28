@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject curDragged = null;
 
     public Transform snapPlatePosition;
-    public float camDragDistance = 100;
-    public bool isOverPlate;
+    float camDragDistance = 100;
+    bool isOverPlate;
 
     public SO_Customer[] Customers;
     public int curCustomer = 0;
@@ -23,15 +23,16 @@ public class GameController : MonoBehaviour
     public List<string> allCurrentKeywords = new List<string>();
 
     S_AudioManager audioManager;
+    public bool isCustomerFinished = false;
 
-    public void Awake()
+    void Awake()
     {
         if (instance == null) instance = this;
         audioManager = GetComponent<S_AudioManager>();
     }
     public void QuitGame() => Application.Quit();
     
-    private void Update()
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
         ProcessDraggable();
@@ -81,6 +82,7 @@ public class GameController : MonoBehaviour
     {
         
         //Placing visually
+        if (currentIngredients.Count > 2) { RemoveIngredient(D); return; }
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
@@ -185,7 +187,6 @@ public class GameController : MonoBehaviour
 
 
 
-
     //When pressing serve, bring the ingredients mix from the kitchen, check if the customer likes it and request next customer
     public void Serve() 
     {
@@ -201,7 +202,7 @@ public class GameController : MonoBehaviour
         audioManager.playTrash();
     }
 
-    void Clear()
+    public void Clear()
     {
         foreach (DraggableData D in snapPlatePosition.GetComponentsInChildren<DraggableData>())
         {
