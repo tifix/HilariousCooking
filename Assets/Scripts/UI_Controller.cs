@@ -20,6 +20,7 @@ public class UI_Controller : MonoBehaviour
     public Image ClientSpriteDspplayer;
     public Image ClientTextBox;
     public Sprite TextboxNonInverted;
+    public Transform screenKitchen, screenOrder, screenMenu;
 
     public CanvasGroup AdvanceDialogueBox;
 

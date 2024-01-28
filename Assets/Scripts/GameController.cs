@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
         if(Input.GetKeyDown(KeyCode.R)) { RestartGame(); }
+        if(Input.GetKeyDown(KeyCode.W)) { Win(); }
         ProcessDraggable();
     }
 
@@ -87,7 +88,7 @@ public class GameController : MonoBehaviour
     {
         
         //Placing visually
-        if (currentIngredients.Count > 2) { RemoveIngredient(D); return; }
+        if (currentIngredients.Count > 3) { RemoveIngredient(D); return; }
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
@@ -219,6 +220,9 @@ public class GameController : MonoBehaviour
 
     public void Win() 
     {
+        UI_Controller.instance.screenKitchen.gameObject.SetActive(false);
+        UI_Controller.instance.screenOrder.gameObject.SetActive(false);
+        UI_Controller.instance.screenMenu.gameObject.SetActive(false);
         Debug.LogWarning("Congratulations! You win!");
         UI_Controller.instance.PlayAnim("Win");
         UI_Controller.instance.WinScreenScore.text=scoreTotal.ToString()+"$";

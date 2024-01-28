@@ -2543,7 +2543,7 @@ RectTransform:
   m_GameObject: {fileID: 1725123371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.97854835, y: 0.97854835, z: 0.97854835}
+  m_LocalScale: {x: 0.9664862, y: 0.9664862, z: 0.9664862}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1118112287}
@@ -2566,7 +2566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   init_Pos: {x: 0, y: -34.641018, z: -810}
-  init_Scale: {x: 1.0140373, y: 1.0140373, z: 1.0140373}
+  init_Scale: {x: 1.0161128, y: 1.0161128, z: 1.0161128}
   frequency: 2
   intensity: 0.05
 --- !u!114 &1725123374
