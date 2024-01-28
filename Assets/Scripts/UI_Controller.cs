@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using static UnityEditor.Progress;
 using UnityEditor;
+using static SO_Customer;
 
 public class UI_Controller : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class UI_Controller : MonoBehaviour
     public void Awake()
     {
         if (instance == null) instance = this;
+        GetComponent<S_characterHandling>().startCharacter(GameController.instance.Customers[GameController.instance.curCustomer]);
     }
 
     public void PlayAnim(string clip) { Debug.Log("Playing animation "+clip); Anim.SetTrigger(clip); }
@@ -68,6 +70,8 @@ public class UI_Controller : MonoBehaviour
         if(GameController.instance.curCustomer>= GameController.instance.Customers.Length) { GameController.instance.Win(); return; }   //when out of bounds, all customers done, win!
 
         ClientTextBox.sprite = TextboxNonInverted;
+
+        GetComponent<S_characterHandling>().startCharacter(GameController.instance.Customers[GameController.instance.curCustomer]);
 
         dialogueScreen = -1; //Reset the dialogue to the initial first screen;
         DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[0];

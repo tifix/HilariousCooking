@@ -189,7 +189,7 @@ public class GameController : MonoBehaviour
     //When pressing serve, bring the ingredients mix from the kitchen, check if the customer likes it and request next customer
     public void Serve() 
     {
-        Customers[curCustomer].Evaluate(currentIngredients, allCurrentKeywords);
+        GetComponent<S_characterHandling>().Evaluate(currentIngredients, allCurrentKeywords);
 
         audioManager.playServe();
         //Clear();
