@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static DraggableData;
 
@@ -31,10 +32,12 @@ public class GameController : MonoBehaviour
         audioManager = GetComponent<S_AudioManager>();
     }
     public void QuitGame() => Application.Quit();
-    
+    public void RestartGame() => SceneManager.LoadScene(0);
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) { UI_Controller.instance.PlayAnim("BackToMenu"); }
+        if(Input.GetKeyDown(KeyCode.R)) { RestartGame(); }
         ProcessDraggable();
     }
 
