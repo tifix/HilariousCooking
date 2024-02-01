@@ -32,16 +32,16 @@ MonoBehaviour:
     - Bah! Don't play it safe with me!
     anim: 1
     scoreGain: 0
-  - desired: 4
-    dialogue:
-    - Oh yeah, risk it for the biscuit. Love it.
-    anim: 0
-    scoreGain: 1.5
   - desired: 3
     dialogue:
     - This! Is! AWESOME! I'd give you a raise if I could... Want a job?
     anim: 0
     scoreGain: 2.5
+  - desired: 4
+    dialogue:
+    - Oh yeah, risk it for the biscuit. Love it.
+    anim: 0
+    scoreGain: 1.5
   - desired: 7
     dialogue:
     - '*snicker* okay, that''s a classic'
@@ -50,7 +50,7 @@ MonoBehaviour:
   - desired: 8
     dialogue:
     - o...kaaayy? That's taking it a bit too far.
-    anim: 0
+    anim: 1
     scoreGain: 0.5
   - desired: 2
     dialogue:

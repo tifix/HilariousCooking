@@ -61,6 +61,11 @@ MonoBehaviour:
     - aww,, that's nice. Thanks, dear
     anim: 0
     scoreGain: 1.5
+  - desired: 7
+    dialogue:
+    - '*chuckle* okay, that''s a classic'
+    anim: 0
+    scoreGain: 1.5
   - desired: 16
     dialogue:
     - ah yes, respecting your elders as you should. Very nice.

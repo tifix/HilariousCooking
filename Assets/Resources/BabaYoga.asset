@@ -59,8 +59,13 @@ MonoBehaviour:
   - desired: 8
     dialogue:
     - 'Witches being horrible is so cliche. '
-    anim: 0
-    scoreGain: -0.2
+    anim: 1
+    scoreGain: -0.5
+  - desired: 7
+    dialogue:
+    - ... eh, kinda funny, super predictable though
+    anim: 2
+    scoreGain: 1
   - desired: 1
     dialogue:
     - These gains didn't come from thin air! Love it!
