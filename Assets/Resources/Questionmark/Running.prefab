@@ -126,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: tags.Array.data[0]
@@ -169,6 +169,10 @@ PrefabInstance:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
+      propertyPath: Combos.Array.data[4].combosWith
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[0].createsTags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -185,12 +189,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
+      propertyPath: Combos.Array.data[4].createsTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[0].createsTags.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[1].createsTags.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[2].createsTags.Array.data[0]
@@ -199,6 +207,10 @@ PrefabInstance:
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[3].createsTags.Array.data[0]
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
+      propertyPath: Combos.Array.data[4].createsTags.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

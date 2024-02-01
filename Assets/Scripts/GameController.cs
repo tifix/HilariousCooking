@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 {
     [Range(0,2)] public float CHEAT_timescale = 1;
     public GameObject curDragged = null;
-
+    public int maxIngredients = 4;
     public int scoreTotal = 0;
     public Transform snapPlatePosition;
     float camDragDistance = 100;
@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     public List<string> allCurrentKeywords = new List<string>();
 
     S_AudioManager audioManager;
-    public bool isCustomerFinished = false;
+    public bool isCustomerFinished = false; //has the customer been served and is a new one about to be called
 
     void Awake()
     {
@@ -82,6 +82,8 @@ public class GameController : MonoBehaviour
     {
         if(curDragged == GO) 
         {
+            if(UI_Controller.instance.Tip_DragNDrop!=null)UI_Controller.instance.Tip_DragNDrop.TriggerDisappear();
+
             if (isOverPlate&&GO.TryGetComponent(out DraggableData D)) 
             {
                 AddIngredient(D);
@@ -99,9 +101,12 @@ public class GameController : MonoBehaviour
     }
     public void AddIngredient(DraggableData D) 
     {
-        
+       
         //Placing visually
-        if (currentIngredients.Count > 3) { RemoveIngredient(D); return; }
+        if (currentIngredients.Count > maxIngredients-1) { RemoveIngredient(D); return; }
+        if (currentIngredients.Count < 1) { UI_Controller.instance.ButtServe.SetActive(true);  UI_Controller.instance.ButtClear.SetActive(true); }
+        
+
         D.transform.SetParent(snapPlatePosition);
         D.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDragDistance));
 
@@ -126,6 +131,7 @@ public class GameController : MonoBehaviour
         AddCompleteCombos(D);
 
         showUpdatedLists();
+        if (currentIngredients.Count == maxIngredients) { UI_Controller.instance.HighlightServeReady.SetActive(true); }
     }
 
     //Sets an ingredient back to its starting point, then removes its name and keywords from the overall list.
@@ -216,6 +222,10 @@ public class GameController : MonoBehaviour
         //Clear();
 
         UI_Controller.instance.isServed = true;
+        UI_Controller.instance.ButtCook.SetActive(false);
+        UI_Controller.instance.ButtServe.SetActive(false);
+        UI_Controller.instance.ButtClear.SetActive(false);
+        UI_Controller.instance.HighlightServeReady.SetActive(false);
     }
 
     public void Trash() 

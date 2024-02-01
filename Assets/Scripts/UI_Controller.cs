@@ -30,7 +30,14 @@ public class UI_Controller : MonoBehaviour
     [SerializeField] GameObject[] NewOptions = new GameObject[0];
 
     public bool isServed;
-    //public 
+    public GameObject HighlightCookReady;
+    public GameObject HighlightServeReady;
+    public GameObject ButtCook;
+    public GameObject ButtClear;
+    public GameObject ButtServe;
+    //public GameObject Tip_AdvanceDialogue;
+    //public GameObject Tip_ChangeShelf;
+    public ClickToestroy Tip_DragNDrop;
 
     void Awake()
     {
@@ -74,32 +81,35 @@ public class UI_Controller : MonoBehaviour
 
     public void AdvanceDialogue()
     {     
-        if(GameController.instance.isCustomerFinished)
-        {
-            return;
-        }
-
-
-        Debug.Log("ADVABCE");
+        if(GameController.instance.isCustomerFinished) return;
+        
 
         //Add current customer reference to GameController
         if (dialogueScreen < GameController.instance.Customers[GameController.instance.curCustomer].dialogue.Count - 1 && !isServed) 
         {
+            Debug.Log("Advancing Dialogue");
             S_AudioManager.instance.handleCharacterSounds();
             dialogueScreen++;
             AdvanceDialogueBox.alpha=1;
+            ButtCook.SetActive(false);        
         }
-        else { AdvanceDialogueBox.alpha=0; }
+        else 
+        {
+            if (!isServed) { ButtCook.SetActive(true); AdvanceDialogueBox.alpha = 0; }  //after the dialogue is finished, but the customer isn't served
+            
+        }
         DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[dialogueScreen];
     }
+
     public void AdvanceToNextCustomer() 
     {
         if (GameController.instance.isCustomerFinished)
         {
             AdvanceDialogueBox.alpha = 0;
             isServed = false;
+            //dialogueScreen = -1;
+            DialogueDisplayer.text = "";
             PlayAnim("NewCustomer");
-            GameController.instance.isCustomerFinished = false;
         }
 
     }
@@ -114,7 +124,9 @@ public class UI_Controller : MonoBehaviour
 
         ClientTextBox.sprite = TextboxNonInverted;
 
-        dialogueScreen = -1; //Reset the dialogue to the initial first screen;
+        GameController.instance.isCustomerFinished = false;
+        dialogueScreen = 0; //Reset the dialogue to the initial first screen;
+        AdvanceDialogueBox.alpha = 1;
 
         DialogueDisplayer.text = GameController.instance.Customers[GameController.instance.curCustomer].dialogue[0];
         ClientSpriteDspplayer.sprite = GameController.instance.Customers[GameController.instance.curCustomer].image;

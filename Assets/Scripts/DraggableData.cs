@@ -115,7 +115,8 @@ public class DraggableData : MonoBehaviour
         Business,
         Threatening,
         Dad,
-        None
+        None,
+        Healthy
     }
 
 }

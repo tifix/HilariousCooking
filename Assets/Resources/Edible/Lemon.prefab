@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Properties.Array.size
@@ -173,12 +173,16 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
+      propertyPath: Combos.Array.data[1].combosWith
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[0].createsTags.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[1].createsTags.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Properties.Array.data[0].yesYouCan.Array.size
@@ -198,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151510483080369220, guid: 8f2b743e9bffe2a439a1dd450ad08801, type: 3}
       propertyPath: Combos.Array.data[1].createsTags.Array.data[1]
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
